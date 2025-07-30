@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buildings - My Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body id="mainBody" class="rtl">
+  <!-- Header/Banner -->
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo">ML</div>
+      <div class="company-name" id="companyName">My Company</div>
+    </div>
+    <div class="controls">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="lang-btn" onclick="switchLang('en')" id="enBtn">English</button>
+      <button class="lang-btn active" onclick="switchLang('ur')" id="urBtn">اردو</button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <button class="hamburger" onclick="toggleSideMenu()" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li class="nav-item"><a href="index.html" id="navHome">Home</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navCommittee">Committee</a>
+          <div class="dropdown-content">
+            <a href="committee.html" id="navCommitteeSub1">Committee</a>
+            <a href="buildings.html" id="navCommitteeSub2">Buildings</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navEducation">Education</a>
+          <div class="dropdown-content">
+            <a href="syllabus.html" id="navEducationSub1">Syllabus</a>
+            <a href="classes.html" id="navEducationSub2">Classes</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="gallery.html" id="navGallery">Gallery</a></li>
+        <li class="nav-item"><a href="#" id="navTab5">Tab 5</a></li>
+        <li class="nav-item"><a href="#" id="navTab6">Tab 6</a></li>
+        <li class="nav-item"><a href="contact.html" id="navContact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+      <h3 id="sideMenuTitle">Menu</h3>
+      <button class="side-menu-close" onclick="closeSideMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="side-menu-list">
+      <li class="side-menu-item"><a href="index.html" id="sideNavHome">Home</a></li>
+      <li class="side-menu-item"><a href="committee.html" id="sideNavCommittee">Committee</a></li>
+      <li class="side-menu-item"><a href="buildings.html" id="sideNavCommitteeSub1">Buildings</a></li>
+      <li class="side-menu-item"><a href="syllabus.html" id="sideNavEducation">Education</a></li>
+      <li class="side-menu-item"><a href="classes.html" id="sideNavEducationSub1">Classes</a></li>
+      <li class="side-menu-item"><a href="gallery.html" id="sideNavGallery">Gallery</a></li>
+      <li class="side-menu-item"><a href="#" id="sideNavTab5">Tab 5</a></li>
+      <li class="side-menu-item"><a href="#" id="sideNavTab6">Tab 6</a></li>
+      <li class="side-menu-item"><a href="contact.html" id="sideNavContact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closeSideMenu()"></div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1 id="pageTitle">Buildings</h1>
+    <p id="pageSubtitle">Explore our facilities and infrastructure</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-section">
+      <h2 id="storyTitle">Our Facilities</h2>
+      <p id="storyContent1">
+        Our buildings and facilities are designed to provide the best possible environment 
+        for our team and clients. We have invested in modern infrastructure that supports 
+        innovation, collaboration, and productivity.
+      </p>
+      <p id="storyContent2">
+        Each building is equipped with state-of-the-art technology and amenities that 
+        enhance the work experience and promote creativity and efficiency.
+      </p>
+      <p id="storyContent3">
+        We are committed to maintaining sustainable and environmentally friendly facilities 
+        that reflect our values and commitment to the future.
+      </p>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+      <h2 id="teamTitle">Building Locations</h2>
+      <p id="teamSubtitle">Our strategically located facilities across the region</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-avatar">HQ</div>
+          <div class="team-name" id="member1Name">Headquarters</div>
+          <div class="team-role" id="member1Role">Main Office</div>
+          <div class="team-description" id="member1Desc">
+            Our central hub for executive leadership and strategic operations.
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">RD</div>
+          <div class="team-name" id="member2Name">Research & Development</div>
+          <div class="team-role" id="member2Role">Innovation Center</div>
+          <div class="team-description" id="member2Desc">
+            State-of-the-art facilities for research and product development.
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">TC</div>
+          <div class="team-name" id="member3Name">Training Center</div>
+          <div class="team-role" id="member3Role">Learning Hub</div>
+          <div class="team-description" id="member3Desc">
+            Dedicated space for professional development and skill enhancement.
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">DC</div>
+          <div class="team-name" id="member4Name">Data Center</div>
+          <div class="team-role" id="member4Role">Technology Hub</div>
+          <div class="team-description" id="member4Desc">
+            Secure and reliable infrastructure for our digital operations.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="content-section">
+      <h2 id="valuesTitle">Facility Features</h2>
+      <div class="values-section">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="value-title" id="value1Title">Sustainability</h3>
+          <p class="value-description" id="value1Desc">
+            Green building practices and energy-efficient systems throughout.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3 class="value-title" id="value2Title">Technology</h3>
+          <p class="value-description" id="value2Desc">
+            High-speed connectivity and modern technological infrastructure.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="value-title" id="value3Title">Security</h3>
+          <p class="value-description" id="value3Desc">
+            Advanced security systems to protect our people and assets.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-wheelchair"></i>
+          </div>
+          <h3 class="value-title" id="value4Title">Accessibility</h3>
+          <p class="value-description" id="value4Desc">
+            Fully accessible facilities designed for everyone's comfort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div id="footerContent">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+      <p>Professional services for modern businesses</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 
