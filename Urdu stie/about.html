@@ -6,524 +6,7 @@
   <title>About Us - My Company</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      transition: all 0.3s ease;
-      overflow-x: hidden;
-    }
-
-    /* Light Theme */
-    .ltr {
-      direction: ltr;
-      text-align: left;
-      background-color: #ffffff;
-      color: #333333;
-    }
-
-    .rtl {
-      direction: rtl;
-      text-align: right;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      background-color: #f8f9fa;
-      color: #333333;
-    }
-
-    /* Dark Theme */
-    .ltr.dark {
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
-
-    .rtl.dark {
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
-
-    /* Header/Banner */
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1000;
-    }
-
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo {
-      width: 50px;
-      height: 50px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #667eea;
-    }
-
-    .company-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .controls {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    /* Navigation */
-    .nav {
-      background-color: #f8f9fa;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #e9ecef;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .dark .nav {
-      background-color: #2d2d2d;
-      border-bottom-color: #404040;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    .nav-item a {
-      text-decoration: none;
-      color: inherit;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      display: block;
-    }
-
-    .nav-item a:hover {
-      background-color: #667eea;
-      color: white;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 0.5rem;
-      background: none;
-      border: none;
-      color: inherit;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: currentColor;
-      margin: 3px 0;
-      transition: 0.3s;
-      border-radius: 2px;
-    }
-
-    /* Side Menu */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      width: 300px;
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      z-index: 2000;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      overflow-y: auto;
-    }
-
-    .side-menu.rtl {
-      transform: translateX(100%);
-    }
-
-    .side-menu.open {
-      transform: translateX(0);
-    }
-
-    .side-menu.rtl.open {
-      transform: translateX(0);
-    }
-
-    .side-menu-header {
-      padding: 2rem 1.5rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .side-menu-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .side-menu-list {
-      list-style: none;
-      padding: 1rem 0;
-    }
-
-    .side-menu-item {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .side-menu-item a {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .side-menu-item a:hover {
-      background-color: rgba(255,255,255,0.1);
-    }
-
-    /* Overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1500;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Page Header */
-    .page-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* Main Content */
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .content-section {
-      margin-bottom: 4rem;
-    }
-
-    .content-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #333;
-    }
-
-    .dark .content-section h2 {
-      color: white;
-    }
-
-    .content-section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      color: #666;
-    }
-
-    .dark .content-section p {
-      color: #ccc;
-    }
-
-    /* Team Section */
-    .team-section {
-      background-color: #f8f9fa;
-      padding: 4rem 2rem;
-      margin: 3rem 0;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .dark .team-section {
-      background-color: #2d2d2d;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .team-member {
-      background: white;
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .dark .team-member {
-      background-color: #333333;
-      color: white;
-    }
-
-    .team-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .team-avatar {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    .team-name {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .team-role {
-      color: #667eea;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    .dark .team-role {
-      color: #8b9dc3;
-    }
-
-    .team-description {
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    .dark .team-description {
-      color: #ccc;
-    }
-
-    /* Values Section */
-    .values-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .value-card {
-      background: white;
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-
-    .dark .value-card {
-      background-color: #333333;
-      color: white;
-    }
-
-    .value-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .value-icon {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      color: white;
-      font-size: 2rem;
-    }
-
-    .value-title {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    .value-description {
-      color: #666;
-    }
-
-    .dark .value-description {
-      color: #ccc;
-    }
-
-    /* Footer */
-    .footer {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    /* Buttons */
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .lang-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .lang-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .lang-btn.active {
-      background: rgba(255,255,255,0.4);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-list {
-        display: none;
-      }
-
-      .nav-container {
-        justify-content: space-between;
-      }
-
-      .page-header h1 {
-        font-size: 2rem;
-      }
-
-      .content-section h2 {
-        font-size: 2rem;
-      }
-
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .values-section {
-        grid-template-columns: 1fr;
-      }
-
-      .main-content {
-        padding: 2rem 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .header {
-        padding: 1rem;
-      }
-
-      .nav {
-        padding: 1rem;
-      }
-
-      .page-header {
-        padding: 3rem 1rem;
-      }
-
-      .page-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .side-menu {
-        width: 280px;
-      }
-    }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body id="mainBody" class="rtl">
   <!-- Header/Banner -->
@@ -551,9 +34,21 @@
       </button>
       <ul class="nav-list" id="navList">
         <li class="nav-item"><a href="index.html" id="navHome">Home</a></li>
-        <li class="nav-item"><a href="#" id="navTab2">Tab 2</a></li>
-        <li class="nav-item"><a href="#" id="navTab3">Tab 3</a></li>
-        <li class="nav-item"><a href="#" id="navTab4">Tab 4</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navAboutUs">About us</a>
+          <div class="dropdown-content">
+            <a href="committee.html" id="navCommitteeSub1">Committee</a>
+            <a href="buildings.html" id="navCommitteeSub2">Buildings</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navEducation">Education</a>
+          <div class="dropdown-content">
+            <a href="syllabus.html" id="navEducationSub1">Syllabus</a>
+            <a href="classes.html" id="navEducationSub2">Classes</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="gallery.html" id="navGallery">Gallery</a></li>
         <li class="nav-item"><a href="#" id="navTab5">Tab 5</a></li>
         <li class="nav-item"><a href="#" id="navTab6">Tab 6</a></li>
         <li class="nav-item"><a href="contact.html" id="navContact">Contact Us</a></li>
@@ -569,11 +64,23 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <ul class="side-menu-list">
+    <ul class="side-menu-list" id="sideMenu-list">
       <li class="side-menu-item"><a href="index.html" id="sideNavHome">Home</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab2">Tab 2</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab3">Tab 3</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab4">Tab 4</a></li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavAboutUs">About Us</a>
+        <div class="dropdown-content">
+          <a href="committee.html" id="sideNavCommitteeSub1">Committee</a>
+          <a href="buildings.html" id="sideNavCommitteeSub2">Buildings</a>
+        </div>
+      </li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavEducation">Education</a>
+        <div class="dropdown-content">
+          <a href="syllabus.html" id="sideNavEducationSub1">Syllabus</a>
+          <a href="classes.html" id="sideNavEducationSub2">Classes</a>
+        </div>
+      </li>
+      <li class="side-menu-item"><a href="gallery.html" id="sideNavGallery">Gallery</a></li>
       <li class="side-menu-item"><a href="#" id="sideNavTab5">Tab 5</a></li>
       <li class="side-menu-item"><a href="#" id="sideNavTab6">Tab 6</a></li>
       <li class="side-menu-item"><a href="contact.html" id="sideNavContact">Contact Us</a></li>
@@ -617,38 +124,27 @@
       <div class="team-grid">
         <div class="team-member">
           <div class="team-avatar">JD</div>
-          <div class="team-name" id="member1Name">John Doe</div>
-          <div class="team-role" id="member1Role">CEO & Founder</div>
-          <div class="team-description" id="member1Desc">
-            Visionary leader with 15+ years of experience in technology and business development.
-          </div>
+          <h3 class="team-name" id="member1Name">John Doe</h3>
+          <p class="team-role" id="member1Role">CEO & Founder</p>
+          <p class="team-description" id="member1Desc">Visionary leader with 15+ years of experience in technology and business development.</p>
         </div>
-
         <div class="team-member">
           <div class="team-avatar">JS</div>
-          <div class="team-name" id="member2Name">Jane Smith</div>
-          <div class="team-role" id="member2Role">CTO</div>
-          <div class="team-description" id="member2Desc">
-            Technical expert specializing in scalable architecture and emerging technologies.
-          </div>
+          <h3 class="team-name" id="member2Name">Jane Smith</h3>
+          <p class="team-role" id="member2Role">CTO</p>
+          <p class="team-description" id="member2Desc">Technical expert specializing in scalable architecture and emerging technologies.</p>
         </div>
-
         <div class="team-member">
           <div class="team-avatar">MJ</div>
-          <div class="team-name" id="member3Name">Mike Johnson</div>
-          <div class="team-role" id="member3Role">Head of Design</div>
-          <div class="team-description" id="member3Desc">
-            Creative director with a passion for user-centered design and brand development.
-          </div>
+          <h3 class="team-name" id="member3Name">Mike Johnson</h3>
+          <p class="team-role" id="member3Role">Head of Design</p>
+          <p class="team-description" id="member3Desc">Creative director with a passion for user-centered design and brand development.</p>
         </div>
-
         <div class="team-member">
           <div class="team-avatar">SW</div>
-          <div class="team-name" id="member4Name">Sarah Wilson</div>
-          <div class="team-role" id="member4Role">Project Manager</div>
-          <div class="team-description" id="member4Desc">
-            Experienced project manager ensuring timely delivery and client satisfaction.
-          </div>
+          <h3 class="team-name" id="member4Name">Sarah Wilson</h3>
+          <p class="team-role" id="member4Role">Project Manager</p>
+          <p class="team-description" id="member4Desc">Experienced project manager ensuring timely delivery and client satisfaction.</p>
         </div>
       </div>
     </div>
@@ -662,39 +158,28 @@
             <i class="fas fa-lightbulb"></i>
           </div>
           <h3 class="value-title" id="value1Title">Innovation</h3>
-          <p class="value-description" id="value1Desc">
-            We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.
-          </p>
+          <p class="value-description" id="value1Desc">We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon">
             <i class="fas fa-handshake"></i>
           </div>
           <h3 class="value-title" id="value2Title">Integrity</h3>
-          <p class="value-description" id="value2Desc">
-            We maintain the highest ethical standards in all our business relationships and operations.
-          </p>
+          <p class="value-description" id="value2Desc">We maintain the highest ethical standards in all our business relationships and operations.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon">
             <i class="fas fa-users"></i>
           </div>
           <h3 class="value-title" id="value3Title">Collaboration</h3>
-          <p class="value-description" id="value3Desc">
-            We believe in the power of teamwork and foster a collaborative environment for success.
-          </p>
+          <p class="value-description" id="value3Desc">We believe in the power of teamwork and foster a collaborative environment for success.</p>
         </div>
-
         <div class="value-card">
           <div class="value-icon">
             <i class="fas fa-star"></i>
           </div>
           <h3 class="value-title" id="value4Title">Excellence</h3>
-          <p class="value-description" id="value4Desc">
-            We strive for excellence in everything we do, from concept to delivery and beyond.
-          </p>
+          <p class="value-description" id="value4Desc">We strive for excellence in everything we do, from concept to delivery and beyond.</p>
         </div>
       </div>
     </div>
@@ -702,239 +187,9 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div id="footerContent">
-      <p>&copy; 2024 My Company. All rights reserved.</p>
-      <p>Professional services for modern businesses</p>
-    </div>
+    <p id="footerContent">© 2024 My Company. All rights reserved. Professional services for modern businesses</p>
   </footer>
 
-  <script>
-    // Theme management
-    let isDarkTheme = false;
-
-    // Side menu management
-    let isSideMenuOpen = false;
-
-    // Translations
-    const translations = {
-      en: {
-        companyName: "My Company",
-        navHome: "Home",
-        navTab2: "Tab 2",
-        navTab3: "Tab 3",
-        navTab4: "Tab 4",
-        navTab5: "Tab 5",
-        navTab6: "Tab 6",
-        navContact: "Contact Us",
-        sideMenuTitle: "Menu",
-        sideNavHome: "Home",
-        sideNavTab2: "Tab 2",
-        sideNavTab3: "Tab 3",
-        sideNavTab4: "Tab 4",
-        sideNavTab5: "Tab 5",
-        sideNavTab6: "Tab 6",
-        sideNavContact: "Contact Us",
-        pageTitle: "About Us",
-        pageSubtitle: "Learn more about our company, mission, and values",
-        storyTitle: "Our Story",
-        storyContent1: "Founded with a vision to transform the digital landscape, our company has been at the forefront of innovation since our inception. We started as a small team of passionate developers and designers who believed that technology could make a real difference in people's lives.",
-        storyContent2: "Today, we've grown into a comprehensive digital solutions provider, serving clients across multiple industries and continents. Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence.",
-        storyContent3: "We believe that success comes from understanding our clients' unique challenges and crafting solutions that not only meet their immediate needs but also position them for long-term growth and success.",
-        teamTitle: "Our Team",
-        teamSubtitle: "Meet the talented individuals who make our vision a reality",
-        member1Name: "John Doe",
-        member1Role: "CEO & Founder",
-        member1Desc: "Visionary leader with 15+ years of experience in technology and business development.",
-        member2Name: "Jane Smith",
-        member2Role: "CTO",
-        member2Desc: "Technical expert specializing in scalable architecture and emerging technologies.",
-        member3Name: "Mike Johnson",
-        member3Role: "Head of Design",
-        member3Desc: "Creative director with a passion for user-centered design and brand development.",
-        member4Name: "Sarah Wilson",
-        member4Role: "Project Manager",
-        member4Desc: "Experienced project manager ensuring timely delivery and client satisfaction.",
-        valuesTitle: "Our Values",
-        value1Title: "Innovation",
-        value1Desc: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.",
-        value2Title: "Integrity",
-        value2Desc: "We maintain the highest ethical standards in all our business relationships and operations.",
-        value3Title: "Collaboration",
-        value3Desc: "We believe in the power of teamwork and foster a collaborative environment for success.",
-        value4Title: "Excellence",
-        value4Desc: "We strive for excellence in everything we do, from concept to delivery and beyond.",
-        footerContent: "© 2024 My Company. All rights reserved. Professional services for modern businesses",
-        langAttr: "en",
-        dirClass: "ltr"
-      },
-      ur: {
-        companyName: "میری کمپنی",
-        navHome: "ہوم",
-        navTab2: "ٹیب 2",
-        navTab3: "ٹیب 3",
-        navTab4: "ٹیب 4",
-        navTab5: "ٹیب 5",
-        navTab6: "ٹیب 6",
-        navContact: "ہم سے رابطہ کریں",
-        sideMenuTitle: "مینو",
-        sideNavHome: "ہوم",
-        sideNavTab2: "ٹیب 2",
-        sideNavTab3: "ٹیب 3",
-        sideNavTab4: "ٹیب 4",
-        sideNavTab5: "ٹیب 5",
-        sideNavTab6: "ٹیب 6",
-        sideNavContact: "ہم سے رابطہ کریں",
-        pageTitle: "ہمارے بارے میں",
-        pageSubtitle: "ہماری کمپنی، مشن اور اقدار کے بارے میں مزید جانیں",
-        storyTitle: "ہماری کہانی",
-        storyContent1: "ڈیجیٹل لینڈ اسکیپ کو تبدیل کرنے کے وژن کے ساتھ قائم، ہماری کمپنی ہماری شروعات سے ہی جدت کی پیش پیش رہی ہے۔ ہم نے شوقین ڈویلپرز اور ڈیزائنرز کی ایک چھوٹی سی ٹیم کے طور پر شروع کیا جو یقین رکھتے تھے کہ ٹیکنالوجی لوگوں کی زندگیوں میں حقیقی فرق لا سکتی ہے۔",
-        storyContent2: "آج، ہم ایک جامع ڈیجیٹل حل فراہم کنندہ میں بڑھ گئے ہیں، جو متعدد صنعتوں اور براعظموں میں گاہکوں کی خدمت کرتے ہیں۔ ہمارا سفر مسلسل سیکھنے، موافقت، اور عمدگی کے لیے غیر متزلزل عزم سے نشان زد ہے۔",
-        storyContent3: "ہم یقین رکھتے ہیں کہ کامیابی ہمارے گاہکوں کے منفرد چیلنجز کو سمجھنے اور ایسے حل تیار کرنے سے آتی ہے جو نہ صرف ان کی فوری ضروریات کو پورا کرتے ہیں بلکہ انہیں طویل مدتی ترقی اور کامیابی کے لیے بھی تیار کرتے ہیں۔",
-        teamTitle: "ہماری ٹیم",
-        teamSubtitle: "ان ہنر مند افراد سے ملیں جو ہمارے وژن کو حقیقت بناتے ہیں",
-        member1Name: "جان ڈو",
-        member1Role: "سی ای او اور بانی",
-        member1Desc: "ٹیکنالوجی اور کاروباری ترقی میں 15+ سال کے تجربے کے ساتھ بصیرت رکھنے والا رہنما۔",
-        member2Name: "جین سمتھ",
-        member2Role: "سی ٹی او",
-        member2Desc: "قابل توسیع آرکیٹیکچر اور ابھرتی ہوئی ٹیکنالوجیز میں مہارت رکھنے والا تکنیکی ماہر۔",
-        member3Name: "مائیک جانسن",
-        member3Role: "ڈیزائن کے سربراہ",
-        member3Desc: "صارف مرکز ڈیزائن اور برانڈ کی ترقی کے جذبے کے ساتھ تخلیقی ڈائریکٹر۔",
-        member4Name: "سارہ ولسن",
-        member4Role: "پروجیکٹ مینیجر",
-        member4Desc: "بروقت ترسیل اور کسٹمر کی اطمینان کو یقینی بنانے والا تجربہ کار پروجیکٹ مینیجر۔",
-        valuesTitle: "ہماری اقدار",
-        value1Title: "جدت",
-        value1Desc: "ہم مسلسل حدود کو آگے بڑھاتے ہیں اور جدید حل فراہم کرنے کے لیے نئی ٹیکنالوجیز کی تلاش کرتے ہیں۔",
-        value2Title: "دیانت",
-        value2Desc: "ہم اپنے تمام کاروباری تعلقات اور آپریشنز میں اعلیٰ اخلاقی معیارات برقرار رکھتے ہیں۔",
-        value3Title: "تعاون",
-        value3Desc: "ہم ٹیم ورک کی طاقت پر یقین رکھتے ہیں اور کامیابی کے لیے تعاون کی فضا کو فروغ دیتے ہیں۔",
-        value4Title: "عمدگی",
-        value4Desc: "ہم ہر کام میں عمدگی کے لیے کوشش کرتے ہیں، تصور سے ترسیل اور اس سے آگے تک۔",
-        footerContent: "© 2024 میری کمپنی۔ تمام حقوق محفوظ ہیں۔ جدید کاروباروں کے لیے پیشہ ورانہ خدمات",
-        langAttr: "ur",
-        dirClass: "rtl"
-      }
-    };
-
-    // Language switching function
-    function switchLang(lang) {
-      const t = translations[lang];
-      const body = document.getElementById("mainBody");
-      const sideMenu = document.getElementById("sideMenu");
-      
-      // Update body class
-      body.className = t.dirClass;
-      if (isDarkTheme) {
-        body.classList.add('dark');
-      }
-      
-      // Update side menu class for RTL/LTR
-      sideMenu.className = 'side-menu';
-      if (t.dirClass === 'rtl') {
-        sideMenu.classList.add('rtl');
-      }
-      
-      // Update document language
-      document.documentElement.lang = t.langAttr;
-      
-      // Update all translatable content
-      document.getElementById("companyName").innerText = t.companyName;
-      document.getElementById("navHome").innerText = t.navHome;
-      document.getElementById("navTab2").innerText = t.navTab2;
-      document.getElementById("navTab3").innerText = t.navTab3;
-      document.getElementById("navTab4").innerText = t.navTab4;
-      document.getElementById("navTab5").innerText = t.navTab5;
-      document.getElementById("navTab6").innerText = t.navTab6;
-      document.getElementById("navContact").innerText = t.navContact;
-      document.getElementById("sideMenuTitle").innerText = t.sideMenuTitle;
-      document.getElementById("sideNavHome").innerText = t.sideNavHome;
-      document.getElementById("sideNavTab2").innerText = t.sideNavTab2;
-      document.getElementById("sideNavTab3").innerText = t.sideNavTab3;
-      document.getElementById("sideNavTab4").innerText = t.sideNavTab4;
-      document.getElementById("sideNavTab5").innerText = t.sideNavTab5;
-      document.getElementById("sideNavTab6").innerText = t.sideNavTab6;
-      document.getElementById("sideNavContact").innerText = t.sideNavContact;
-      document.getElementById("pageTitle").innerText = t.pageTitle;
-      document.getElementById("pageSubtitle").innerText = t.pageSubtitle;
-      document.getElementById("storyTitle").innerText = t.storyTitle;
-      document.getElementById("storyContent1").innerText = t.storyContent1;
-      document.getElementById("storyContent2").innerText = t.storyContent2;
-      document.getElementById("storyContent3").innerText = t.storyContent3;
-      document.getElementById("teamTitle").innerText = t.teamTitle;
-      document.getElementById("teamSubtitle").innerText = t.teamSubtitle;
-      document.getElementById("member1Name").innerText = t.member1Name;
-      document.getElementById("member1Role").innerText = t.member1Role;
-      document.getElementById("member1Desc").innerText = t.member1Desc;
-      document.getElementById("member2Name").innerText = t.member2Name;
-      document.getElementById("member2Role").innerText = t.member2Role;
-      document.getElementById("member2Desc").innerText = t.member2Desc;
-      document.getElementById("member3Name").innerText = t.member3Name;
-      document.getElementById("member3Role").innerText = t.member3Role;
-      document.getElementById("member3Desc").innerText = t.member3Desc;
-      document.getElementById("member4Name").innerText = t.member4Name;
-      document.getElementById("member4Role").innerText = t.member4Role;
-      document.getElementById("member4Desc").innerText = t.member4Desc;
-      document.getElementById("valuesTitle").innerText = t.valuesTitle;
-      document.getElementById("value1Title").innerText = t.value1Title;
-      document.getElementById("value1Desc").innerText = t.value1Desc;
-      document.getElementById("value2Title").innerText = t.value2Title;
-      document.getElementById("value2Desc").innerText = t.value2Desc;
-      document.getElementById("value3Title").innerText = t.value3Title;
-      document.getElementById("value3Desc").innerText = t.value3Desc;
-      document.getElementById("value4Title").innerText = t.value4Title;
-      document.getElementById("value4Desc").innerText = t.value4Desc;
-      document.getElementById("footerContent").innerHTML = t.footerContent;
-      
-      // Update button states
-      document.getElementById("enBtn").classList.toggle("active", lang === "en");
-      document.getElementById("urBtn").classList.toggle("active", lang === "ur");
-    }
-
-    // Theme toggle function
-    function toggleTheme() {
-      isDarkTheme = !isDarkTheme;
-      const body = document.getElementById("mainBody");
-      const themeToggle = document.getElementById("themeToggle");
-      
-      if (isDarkTheme) {
-        body.classList.add('dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        body.classList.remove('dark');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      }
-    }
-
-    // Side menu functions
-    function toggleSideMenu() {
-      const sideMenu = document.getElementById("sideMenu");
-      const overlay = document.getElementById("overlay");
-      
-      isSideMenuOpen = !isSideMenuOpen;
-      
-      if (isSideMenuOpen) {
-        sideMenu.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } else {
-        sideMenu.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    function closeSideMenu() {
-      const sideMenu = document.getElementById("sideMenu");
-      const overlay = document.getElementById("overlay");
-      
-      isSideMenuOpen = false;
-      sideMenu.classList.remove('open');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html> 

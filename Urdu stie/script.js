@@ -13,243 +13,310 @@ const galleryContent = [
   { text: "Your Success is Our Priority", color: "#4facfe" }
 ];
 
-// Translations
+// Centralized translations object with better structure
 const translations = {
   en: {
-    companyName: "My Company",
-    navHome: "Home",
-    navCommittee: "Committee",
-    navEducation: "Education",
-    navGallery: "Gallery",
-    navTab5: "Tab 5",
-    navTab6: "Tab 6",
-    navContact: "Contact Us",
-    navCommitteeSub1: "Committee",
-    navCommitteeSub2: "Buildings",
-    navEducationSub1: "Syllabus",
-    navEducationSub2: "Classes",
-    sideMenuTitle: "Menu",
-    sideNavHome: "Home",
-    sideNavCommittee: "Committee",
-    sideNavEducation: "Education",
-    sideNavGallery: "Gallery",
-    sideNavTab5: "Tab 5",
-    sideNavTab6: "Tab 6",
-    sideNavContact: "Contact Us",
-    sideNavCommitteeSub1: "Committee",
-    sideNavCommitteeSub2: "Buildings",
-    sideNavEducationSub1: "Syllabus",
-    sideNavEducationSub2: "Classes",
-    mainContent: "Welcome to our comprehensive platform where innovation meets excellence. We provide cutting-edge solutions tailored to meet your specific needs. Our team of experts is dedicated to delivering exceptional results that exceed expectations.",
-    infoTitle1: "Innovation",
-    infoDesc1: "Cutting-edge solutions that drive your business forward with the latest technology and methodologies.",
-    infoLink1: "Learn More",
-    infoTitle2: "Team Excellence",
-    infoDesc2: "Our dedicated team of professionals ensures quality delivery and exceptional customer service.",
-    infoLink2: "Meet Our Team",
-    infoTitle3: "Growth",
-    infoDesc3: "Strategic solutions designed to accelerate your business growth and maximize your potential.",
-    infoLink3: "Our Strategy",
-    infoTitle4: "Security",
-    infoDesc4: "Robust security measures to protect your data and ensure business continuity at all times.",
-    infoLink4: "Security Details",
-    aboutTitle: "About Us",
-    aboutDescription: "We are a forward-thinking company committed to delivering exceptional value to our clients. With years of experience and a passion for innovation, we help businesses achieve their goals through strategic solutions and dedicated support.",
-    aboutLink: "Learn More About Us",
-    aboutImage: "Company Image",
-    storyTitle: "Our Story",
-    storyContent1: "Founded with a vision to transform the digital landscape, our company has been at the forefront of innovation since our inception. We started as a small team of passionate developers and designers who believed that technology could make a real difference in people's lives.",
-    storyContent2: "Today, we've grown into a comprehensive digital solutions provider, serving clients across multiple industries and continents. Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence.",
-    storyContent3: "We believe that success comes from understanding our clients' unique challenges and crafting solutions that not only meet their immediate needs but also position them for long-term growth and success.",
-    teamTitle: "Our Team",
-    teamSubtitle: "Meet the talented individuals who make our vision a reality",
-    member1Name: "John Doe",
-    member1Role: "CEO & Founder",
-    member1Desc: "Visionary leader with 15+ years of experience in technology and business development.",
-    member2Name: "Jane Smith",
-    member2Role: "CTO",
-    member2Desc: "Technical expert specializing in scalable architecture and emerging technologies.",
-    member3Name: "Mike Johnson",
-    member3Role: "Head of Design",
-    member3Desc: "Creative director with a passion for user-centered design and brand development.",
-    member4Name: "Sarah Wilson",
-    member4Role: "Project Manager",
-    member4Desc: "Experienced project manager ensuring timely delivery and client satisfaction.",
-    valuesTitle: "Our Values",
-    value1Title: "Innovation",
-    value1Desc: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.",
-    value2Title: "Integrity",
-    value2Desc: "We maintain the highest ethical standards in all our business relationships and operations.",
-    value3Title: "Collaboration",
-    value3Desc: "We believe in the power of teamwork and foster a collaborative environment for success.",
-    value4Title: "Excellence",
-    value4Desc: "We strive for excellence in everything we do, from concept to delivery and beyond.",
-    pageTitle: "About Us",
-    pageSubtitle: "Learn more about our company, mission, and values",
-    contactPageTitle: "Contact Us",
-    contactPageSubtitle: "Get in touch with us. We'd love to hear from you!",
-    formTitle: "Send us a Message",
-    nameLabel: "Full Name *",
-    emailLabel: "Email Address *",
-    phoneLabel: "Phone Number",
-    subjectLabel: "Subject *",
-    selectOption: "Select a subject",
-    generalOption: "General Inquiry",
-    supportOption: "Technical Support",
-    salesOption: "Sales Question",
-    partnershipOption: "Partnership",
-    otherOption: "Other",
-    messageLabel: "Message *",
-    submitBtn: "Send Message",
-    infoTitle: "Contact Information",
-    addressTitle: "Address",
-    addressText: "123 Business Street, Suite 100\nCity, State 12345",
-    phoneTitle: "Phone",
-    phoneText: "+1 (555) 123-4567",
-    emailTitle: "Email",
-    emailText: "info@mycompany.com",
-    hoursTitle: "Business Hours",
-    hoursText: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM",
-    mapTitle: "Find Us",
-    mapPlaceholder: "Interactive Map Coming Soon",
-    galleryPageTitle: "Gallery",
-    galleryPageSubtitle: "Explore our collection of images and projects",
-    galleryItem1Title: "Project Showcase",
-    galleryItem1Desc: "Our latest project highlights and achievements",
-    galleryItem2Title: "Team Events",
-    galleryItem2Desc: "Behind the scenes with our amazing team",
-    galleryItem3Title: "Office Space",
-    galleryItem3Desc: "Our modern and inspiring work environment",
-    galleryItem4Title: "Technology",
-    galleryItem4Desc: "Cutting-edge technology and innovation",
-    galleryItem5Title: "Growth & Success",
-    galleryItem5Desc: "Our journey of continuous improvement",
-    galleryItem6Title: "Awards & Recognition",
-    galleryItem6Desc: "Celebrating our achievements and milestones",
-    galleryItem7Title: "Partnerships",
-    galleryItem7Desc: "Collaborating with industry leaders",
-    galleryItem8Title: "Innovation",
-    galleryItem8Desc: "Pushing boundaries and exploring new ideas",
-    footerContent: "© 2024 My Company. All rights reserved. Professional services for modern businesses",
+    // Banner/Header
+    banner: {
+      companyName: "My Company"
+    },
+    
+    // Navigation
+    nav: {
+      home: "Home",
+      aboutUs: "About Us",
+      education: "Education",
+      gallery: "Gallery",
+      tab5: "Tab 5",
+      tab6: "Tab 6",
+      contact: "Contact Us",
+      committeeSub1: "Committee",
+      committeeSub2: "Buildings",
+      educationSub1: "Syllabus",
+      educationSub2: "Classes"
+    },
+    
+    // Side Menu
+    sideMenu: {
+      title: "Menu",
+      home: "Home",
+      aboutUs: "About Us",
+      education: "Education",
+      gallery: "Gallery",
+      tab5: "Tab 5",
+      tab6: "Tab 6",
+      contact: "Contact Us",
+      committeeSub1: "Committee",
+      committeeSub2: "Buildings",
+      educationSub1: "Syllabus",
+      educationSub2: "Classes"
+    },
+    
+    // Home Page Content
+    home: {
+      mainContent: "Welcome to our comprehensive platform where innovation meets excellence. We provide cutting-edge solutions tailored to meet your specific needs. Our team of experts is dedicated to delivering exceptional results that exceed expectations.",
+      infoTitle1: "Innovation",
+      infoDesc1: "Cutting-edge solutions that drive your business forward with the latest technology and methodologies.",
+      infoLink1: "Learn More",
+      infoTitle2: "Team Excellence",
+      infoDesc2: "Our dedicated team of professionals ensures quality delivery and exceptional customer service.",
+      infoLink2: "Meet Our Team",
+      infoTitle3: "Growth",
+      infoDesc3: "Strategic solutions designed to accelerate your business growth and maximize your potential.",
+      infoLink3: "Our Strategy",
+      infoTitle4: "Security",
+      infoDesc4: "Robust security measures to protect your data and ensure business continuity at all times.",
+      infoLink4: "Security Details",
+      aboutTitle: "About Us",
+      aboutDescription: "We are a forward-thinking company committed to delivering exceptional value to our clients. With years of experience and a passion for innovation, we help businesses achieve their goals through strategic solutions and dedicated support.",
+      aboutLink: "Learn More About Us",
+      aboutImage: "Company Image"
+    },
+    
+    // About Page Content
+    about: {
+      pageTitle: "About Us",
+      pageSubtitle: "Learn more about our company, mission, and values",
+      storyTitle: "Our Story",
+      storyContent1: "Founded with a vision to transform the digital landscape, our company has been at the forefront of innovation since our inception. We started as a small team of passionate developers and designers who believed that technology could make a real difference in people's lives.",
+      storyContent2: "Today, we've grown into a comprehensive digital solutions provider, serving clients across multiple industries and continents. Our journey has been marked by continuous learning, adaptation, and an unwavering commitment to excellence.",
+      storyContent3: "We believe that success comes from understanding our clients' unique challenges and crafting solutions that not only meet their immediate needs but also position them for long-term growth and success.",
+      teamTitle: "Our Team",
+      teamSubtitle: "Meet the talented individuals who make our vision a reality",
+      member1Name: "John Doe",
+      member1Role: "CEO & Founder",
+      member1Desc: "Visionary leader with 15+ years of experience in technology and business development.",
+      member2Name: "Jane Smith",
+      member2Role: "CTO",
+      member2Desc: "Technical expert specializing in scalable architecture and emerging technologies.",
+      member3Name: "Mike Johnson",
+      member3Role: "Head of Design",
+      member3Desc: "Creative director with a passion for user-centered design and brand development.",
+      member4Name: "Sarah Wilson",
+      member4Role: "Project Manager",
+      member4Desc: "Experienced project manager ensuring timely delivery and client satisfaction.",
+      valuesTitle: "Our Values",
+      value1Title: "Innovation",
+      value1Desc: "We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.",
+      value2Title: "Integrity",
+      value2Desc: "We maintain the highest ethical standards in all our business relationships and operations.",
+      value3Title: "Collaboration",
+      value3Desc: "We believe in the power of teamwork and foster a collaborative environment for success.",
+      value4Title: "Excellence",
+      value4Desc: "We strive for excellence in everything we do, from concept to delivery and beyond."
+    },
+    
+    // Contact Page Content
+    contact: {
+      pageTitle: "Contact Us",
+      pageSubtitle: "Get in touch with us. We'd love to hear from you!",
+      formTitle: "Send us a Message",
+      nameLabel: "Full Name *",
+      emailLabel: "Email Address *",
+      phoneLabel: "Phone Number",
+      subjectLabel: "Subject *",
+      selectOption: "Select a subject",
+      generalOption: "General Inquiry",
+      supportOption: "Technical Support",
+      salesOption: "Sales Question",
+      partnershipOption: "Partnership",
+      otherOption: "Other",
+      messageLabel: "Message *",
+      submitBtn: "Send Message",
+      infoTitle: "Contact Information",
+      addressTitle: "Address",
+      addressText: "123 Business Street, Suite 100\nCity, State 12345",
+      phoneTitle: "Phone",
+      phoneText: "+1 (555) 123-4567",
+      emailTitle: "Email",
+      emailText: "info@mycompany.com",
+      hoursTitle: "Business Hours",
+      hoursText: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM",
+      mapTitle: "Find Us",
+      mapPlaceholder: "Interactive Map Coming Soon"
+    },
+    
+    // Gallery Page Content
+    gallery: {
+      pageTitle: "Gallery",
+      pageSubtitle: "Explore our collection of images and projects",
+      item1Title: "Project Showcase",
+      item1Desc: "Our latest project highlights and achievements",
+      item2Title: "Team Events",
+      item2Desc: "Behind the scenes with our amazing team",
+      item3Title: "Office Space",
+      item3Desc: "Our modern and inspiring work environment",
+      item4Title: "Technology",
+      item4Desc: "Cutting-edge technology and innovation",
+      item5Title: "Growth & Success",
+      item5Desc: "Our journey of continuous improvement",
+      item6Title: "Awards & Recognition",
+      item6Desc: "Celebrating our achievements and milestones",
+      item7Title: "Partnerships",
+      item7Desc: "Collaborating with industry leaders",
+      item8Title: "Innovation",
+      item8Desc: "Pushing boundaries and exploring new ideas"
+    },
+    
+    // Footer
+    footer: {
+      content: "© 2024 My Company. All rights reserved. Professional services for modern businesses"
+    },
+    
+    // Language settings
     langAttr: "en",
     dirClass: "ltr"
   },
+  
   ur: {
-    companyName: "میری کمپنی",
-    navHome: "ہوم",
-    navCommittee: "کمیٹی",
-    navEducation: "تعلیم",
-    navGallery: "گیلری",
-    navTab5: "ٹیب 5",
-    navTab6: "ٹیب 6",
-    navContact: "ہم سے رابطہ کریں",
-    navCommitteeSub1: "کمیٹی",
-    navCommitteeSub2: "عمارتیں",
-    navEducationSub1: "نصاب",
-    navEducationSub2: "کلاسز",
-    sideMenuTitle: "مینو",
-    sideNavHome: "ہوم",
-    sideNavCommittee: "کمیٹی",
-    sideNavEducation: "تعلیم",
-    sideNavGallery: "گیلری",
-    sideNavTab5: "ٹیب 5",
-    sideNavTab6: "ٹیب 6",
-    sideNavContact: "ہم سے رابطہ کریں",
-    sideNavCommitteeSub1: "کمیٹی",
-    sideNavCommitteeSub2: "عمارتیں",
-    sideNavEducationSub1: "نصاب",
-    sideNavEducationSub2: "کلاسز",
-    mainContent: "ہمارے جامع پلیٹ فارم میں خوش آمدید جہاں جدت اور عمدگی ملتی ہے۔ ہم آپ کی مخصوص ضروریات کے مطابق جدید حل فراہم کرتے ہیں۔ ہمارے ماہرین کی ٹیم غیر معمولی نتائج فراہم کرنے کے لیے وقف ہے جو توقعات سے بڑھ کر ہیں۔",
-    infoTitle1: "جدت",
-    infoDesc1: "جدید ٹیکنالوجی اور طریقوں کے ساتھ آپ کے کاروبار کو آگے بڑھانے والے جدید حل۔",
-    infoLink1: "مزید جانیں",
-    infoTitle2: "ٹیم کی عمدگی",
-    infoDesc2: "ہمارے پیشہ ور افراد کی وقف ٹیم معیاری ترسیل اور غیر معمولی کسٹمر سروس کو یقینی بناتی ہے۔",
-    infoLink2: "ہماری ٹیم سے ملیں",
-    infoTitle3: "ترقی",
-    infoDesc3: "آپ کے کاروبار کی ترقی کو تیز کرنے اور آپ کی صلاحیت کو زیادہ سے زیادہ بنانے کے لیے ڈیزائن کردہ حکمت عملی حل۔",
-    infoLink3: "ہماری حکمت عملی",
-    infoTitle4: "سیکیورٹی",
-    infoDesc4: "آپ کے ڈیٹا کی حفاظت اور ہر وقت کاروباری تسلسل کو یقینی بنانے کے لیے مضبوط سیکیورٹی اقدامات۔",
-    infoLink4: "سیکیورٹی کی تفصیلات",
-    aboutTitle: "ہمارے بارے میں",
-    aboutDescription: "ہم ایک پیش رفت پسند کمپنی ہیں جو اپنے گاہکوں کو غیر معمولی قیمت فراہم کرنے کے لیے وقف ہیں۔ سالوں کے تجربے اور جدت کے جذبے کے ساتھ، ہم حکمت عملی حل اور وقف سپورٹ کے ذریعے کاروباروں کو ان کے اہداف حاصل کرنے میں مدد کرتے ہیں۔",
-    aboutLink: "ہمارے بارے میں مزید جانیں",
-    aboutImage: "کمپنی کی تصویر",
-    storyTitle: "ہماری کہانی",
-    storyContent1: "ڈیجیٹل لینڈ اسکیپ کو تبدیل کرنے کے وژن کے ساتھ قائم، ہماری کمپنی ہماری شروعات سے ہی جدت کی پیش پیش رہی ہے۔ ہم نے شوقین ڈویلپرز اور ڈیزائنرز کی ایک چھوٹی سی ٹیم کے طور پر شروع کیا جو یقین رکھتے تھے کہ ٹیکنالوجی لوگوں کی زندگیوں میں حقیقی فرق لا سکتی ہے۔",
-    storyContent2: "آج، ہم ایک جامع ڈیجیٹل حل فراہم کنندہ میں بڑھ گئے ہیں، جو متعدد صنعتوں اور براعظموں میں گاہکوں کی خدمت کرتے ہیں۔ ہمارا سفر مسلسل سیکھنے، موافقت، اور عمدگی کے لیے غیر متزلزل عزم سے نشان زد ہے۔",
-    storyContent3: "ہم یقین رکھتے ہیں کہ کامیابی ہمارے گاہکوں کے منفرد چیلنجز کو سمجھنے اور ایسے حل تیار کرنے سے آتی ہے جو نہ صرف ان کی فوری ضروریات کو پورا کرتے ہیں بلکہ انہیں طویل مدتی ترقی اور کامیابی کے لیے بھی تیار کرتے ہیں۔",
-    teamTitle: "ہماری ٹیم",
-    teamSubtitle: "ان ہنر مند افراد سے ملیں جو ہمارے وژن کو حقیقت بناتے ہیں",
-    member1Name: "جان ڈو",
-    member1Role: "سی ای اور بانی",
-    member1Desc: "ٹیکنالوجی اور کاروباری ترقی میں 15+ سال کے تجربے کے ساتھ بصیرت رکھنے والا رہنما۔",
-    member2Name: "جین سمتھ",
-    member2Role: "سی ٹی او",
-    member2Desc: "قابل توسیع آرکیٹیکچر اور ابھرتی ہوئی ٹیکنالوجیز میں مہارت رکھنے والا تکنیکی ماہر۔",
-    member3Name: "مائیک جانسن",
-    member3Role: "ڈیزائن کے سربراہ",
-    member3Desc: "صارف مرکز ڈیزائن اور برانڈ کی ترقی کے جذبے کے ساتھ تخلیقی ڈائریکٹر۔",
-    member4Name: "سارہ ولسن",
-    member4Role: "پروجیکٹ مینیجر",
-    member4Desc: "بروقت ترسیل اور کسٹمر کی اطمینان کو یقینی بنانے والا تجربہ کار پروجیکٹ مینیجر۔",
-    valuesTitle: "ہماری اقدار",
-    value1Title: "جدت",
-    value1Desc: "ہم مسلسل حدود کو آگے بڑھاتے ہیں اور جدید حل فراہم کرنے کے لیے نئی ٹیکنالوجیز کی تلاش کرتے ہیں۔",
-    value2Title: "دیانت",
-    value2Desc: "ہم اپنے تمام کاروباری تعلقات اور آپریشنز میں اعلیٰ اخلاقی معیارات برقرار رکھتے ہیں۔",
-    value3Title: "تعاون",
-    value3Desc: "ہم ٹیم ورک کی طاقت پر یقین رکھتے ہیں اور کامیابی کے لیے تعاون کی فضا کو فروغ دیتے ہیں۔",
-    value4Title: "عمدگی",
-    value4Desc: "ہم ہر کام میں عمدگی کے لیے کوشش کرتے ہیں، تصور سے ترسیل اور اس سے آگے تک۔",
-    pageTitle: "ہمارے بارے میں",
-    pageSubtitle: "ہماری کمپنی، مشن اور اقدار کے بارے میں مزید جانیں",
-    contactPageTitle: "ہم سے رابطہ کریں",
-    contactPageSubtitle: "ہم سے رابطہ کریں۔ ہم آپ سے سننا پسند کریں گے!",
-    formTitle: "ہمیں پیغام بھیجیں",
-    nameLabel: "پورا نام *",
-    emailLabel: "ای میل ایڈریس *",
-    phoneLabel: "فون نمبر",
-    subjectLabel: "موضوع *",
-    selectOption: "موضوع منتخب کریں",
-    generalOption: "عام استفسار",
-    supportOption: "تکنیکی سپورٹ",
-    salesOption: "فروخت کا سوال",
-    partnershipOption: "شراکت داری",
-    otherOption: "دیگر",
-    messageLabel: "پیغام *",
-    submitBtn: "پیغام بھیجیں",
-    infoTitle: "رابطے کی معلومات",
-    addressTitle: "پتہ",
-    addressText: "123 بزنس سٹریٹ، سوٹ 100\nشہر، ریاست 12345",
-    phoneTitle: "فون",
-    phoneText: "+1 (555) 123-4567",
-    emailTitle: "ای میل",
-    emailText: "info@mycompany.com",
-    hoursTitle: "کاروباری اوقات",
-    hoursText: "پیر - جمعہ: صبح 9:00 - شام 6:00\nہفتہ: صبح 10:00 - شام 4:00",
-    mapTitle: "ہمیں تلاش کریں",
-    mapPlaceholder: "انٹرایکٹو نقشہ جلد آ رہا ہے",
-    galleryPageTitle: "گیلری",
-    galleryPageSubtitle: "ہماری تصاویر اور پروجیکٹس کی مجموعہ کو دریافت کریں",
-    galleryItem1Title: "پروجیکٹ شوکیس",
-    galleryItem1Desc: "ہمارے تازہ ترین پروجیکٹ کی نمایاں خصوصیات اور کامیابیاں",
-    galleryItem2Title: "ٹیم کے واقعات",
-    galleryItem2Desc: "ہماری شاندار ٹیم کے ساتھ پردے کے پیچھے",
-    galleryItem3Title: "دفتری جگہ",
-    galleryItem3Desc: "ہمارا جدید اور متاثر کن کام کا ماحول",
-    galleryItem4Title: "ٹیکنالوجی",
-    galleryItem4Desc: "جدید ٹیکنالوجی اور جدت",
-    galleryItem5Title: "ترقی اور کامیابی",
-    galleryItem5Desc: "مسلسل بہتری کا ہمارا سفر",
-    galleryItem6Title: "انعامات اور شناخت",
-    galleryItem6Desc: "ہماری کامیابیوں اور سنگ میل کا جشن",
-    galleryItem7Title: "شراکت داریاں",
-    galleryItem7Desc: "صنعت کے رہنماؤں کے ساتھ تعاون",
-    galleryItem8Title: "جدت",
-    galleryItem8Desc: "حدود کو آگے بڑھانا اور نئے خیالات کی تلاش",
-    footerContent: "© 2024 میری کمپنی۔ تمام حقوق محفوظ ہیں۔ جدید کاروباروں کے لیے پیشہ ورانہ خدمات",
+    // Banner/Header
+    banner: {
+      companyName: "میری کمپنی"
+    },
+    
+    // Navigation
+    nav: {
+      home: "ہوم",
+      aboutUs: "بارے میں",
+      education: "تعلیم",
+      gallery: "گیلری",
+      tab5: "ٹیب 5",
+      tab6: "ٹیب 6",
+      contact: "ہم سے رابطہ کریں",
+      committeeSub1: "کمیٹی",
+      committeeSub2: "عمارتیں",
+      educationSub1: "نصاب",
+      educationSub2: "کلاسز"
+    },
+    
+    // Side Menu
+    sideMenu: {
+      title: "مینو",
+      home: "ہوم",
+      aboutUs: "بارے میں",
+      education: "تعلیم",
+      gallery: "گیلری",
+      tab5: "ٹیب 5",
+      tab6: "ٹیب 6",
+      contact: "ہم سے رابطہ کریں",
+      committeeSub1: "کمیٹی",
+      committeeSub2: "عمارتیں",
+      educationSub1: "نصاب",
+      educationSub2: "کلاسز"
+    },
+    
+    // Home Page Content
+    home: {
+      mainContent: "ہمارے جامع پلیٹ فارم میں خوش آمدید جہاں جدت اور عمدگی ملتی ہے۔ ہم آپ کی مخصوص ضروریات کے مطابق جدید حل فراہم کرتے ہیں۔ ہمارے ماہرین کی ٹیم غیر معمولی نتائج فراہم کرنے کے لیے وقف ہے جو توقعات سے بڑھ کر ہیں۔",
+      infoTitle1: "جدت",
+      infoDesc1: "جدید ٹیکنالوجی اور طریقوں کے ساتھ آپ کے کاروبار کو آگے بڑھانے والے جدید حل۔",
+      infoLink1: "مزید جانیں",
+      infoTitle2: "ٹیم کی عمدگی",
+      infoDesc2: "ہمارے پیشہ ور افراد کی وقف ٹیم معیاری ترسیل اور غیر معمولی کسٹمر سروس کو یقینی بناتی ہے۔",
+      infoLink2: "ہماری ٹیم سے ملیں",
+      infoTitle3: "ترقی",
+      infoDesc3: "آپ کے کاروبار کی ترقی کو تیز کرنے اور آپ کی صلاحیت کو زیادہ سے زیادہ بنانے کے لیے ڈیزائن کردہ حکمت عملی حل۔",
+      infoLink3: "ہماری حکمت عملی",
+      infoTitle4: "سیکیورٹی",
+      infoDesc4: "آپ کے ڈیٹا کی حفاظت اور ہر وقت کاروباری تسلسل کو یقینی بنانے کے لیے مضبوط سیکیورٹی اقدامات۔",
+      infoLink4: "سیکیورٹی کی تفصیلات",
+      aboutTitle: "ہمارے بارے میں",
+      aboutDescription: "ہم ایک پیش رفت پسند کمپنی ہیں جو اپنے گاہکوں کو غیر معمولی قیمت فراہم کرنے کے لیے وقف ہیں۔ سالوں کے تجربے اور جدت کے جذبے کے ساتھ، ہم حکمت عملی حل اور وقف سپورٹ کے ذریعے کاروباروں کو ان کے اہداف حاصل کرنے میں مدد کرتے ہیں۔",
+      aboutLink: "ہمارے بارے میں مزید جانیں",
+      aboutImage: "کمپنی کی تصویر"
+    },
+    
+    // About Page Content
+    about: {
+      pageTitle: "ہمارے بارے میں",
+      pageSubtitle: "ہماری کمپنی، مشن اور اقدار کے بارے میں مزید جانیں",
+      storyTitle: "ہماری کہانی",
+      storyContent1: "ڈیجیٹل لینڈ اسکیپ کو تبدیل کرنے کے وژن کے ساتھ قائم، ہماری کمپنی ہماری شروعات سے ہی جدت کی پیش پیش رہی ہے۔ ہم نے شوقین ڈویلپرز اور ڈیزائنرز کی ایک چھوٹی سی ٹیم کے طور پر شروع کیا جو یقین رکھتے تھے کہ ٹیکنالوجی لوگوں کی زندگیوں میں حقیقی فرق لا سکتی ہے۔",
+      storyContent2: "آج، ہم ایک جامع ڈیجیٹل حل فراہم کنندہ میں بڑھ گئے ہیں، جو متعدد صنعتوں اور براعظموں میں گاہکوں کی خدمت کرتے ہیں۔ ہمارا سفر مسلسل سیکھنے، موافقت، اور عمدگی کے لیے غیر متزلزل عزم سے نشان زد ہے۔",
+      storyContent3: "ہم یقین رکھتے ہیں کہ کامیابی ہمارے گاہکوں کے منفرد چیلنجز کو سمجھنے اور ایسے حل تیار کرنے سے آتی ہے جو نہ صرف ان کی فوری ضروریات کو پورا کرتے ہیں بلکہ انہیں طویل مدتی ترقی اور کامیابی کے لیے بھی تیار کرتے ہیں۔",
+      teamTitle: "ہماری ٹیم",
+      teamSubtitle: "ان ہنر مند افراد سے ملیں جو ہمارے وژن کو حقیقت بناتے ہیں",
+      member1Name: "جان ڈو",
+      member1Role: "سی ای اور بانی",
+      member1Desc: "ٹیکنالوجی اور کاروباری ترقی میں 15+ سال کے تجربے کے ساتھ بصیرت رکھنے والا رہنما۔",
+      member2Name: "جین سمتھ",
+      member2Role: "سی ٹی او",
+      member2Desc: "قابل توسیع آرکیٹیکچر اور ابھرتی ہوئی ٹیکنالوجیز میں مہارت رکھنے والا تکنیکی ماہر۔",
+      member3Name: "مائیک جانسن",
+      member3Role: "ڈیزائن کے سربراہ",
+      member3Desc: "صارف مرکز ڈیزائن اور برانڈ کی ترقی کے جذبے کے ساتھ تخلیقی ڈائریکٹر۔",
+      member4Name: "سارہ ولسن",
+      member4Role: "پروجیکٹ مینیجر",
+      member4Desc: "بروقت ترسیل اور کسٹمر کی اطمینان کو یقینی بنانے والا تجربہ کار پروجیکٹ مینیجر۔",
+      valuesTitle: "ہماری اقدار",
+      value1Title: "جدت",
+      value1Desc: "ہم مسلسل حدود کو آگے بڑھاتے ہیں اور جدید حل فراہم کرنے کے لیے نئی ٹیکنالوجیز کی تلاش کرتے ہیں۔",
+      value2Title: "دیانت",
+      value2Desc: "ہم اپنے تمام کاروباری تعلقات اور آپریشنز میں اعلیٰ اخلاقی معیارات برقرار رکھتے ہیں۔",
+      value3Title: "تعاون",
+      value3Desc: "ہم ٹیم ورک کی طاقت پر یقین رکھتے ہیں اور کامیابی کے لیے تعاون کی فضا کو فروغ دیتے ہیں۔",
+      value4Title: "عمدگی",
+      value4Desc: "ہم ہر کام میں عمدگی کے لیے کوشش کرتے ہیں، تصور سے ترسیل اور اس سے آگے تک۔"
+    },
+    
+    // Contact Page Content
+    contact: {
+      pageTitle: "ہم سے رابطہ کریں",
+      pageSubtitle: "ہم سے رابطہ کریں۔ ہم آپ سے سننا پسند کریں گے!",
+      formTitle: "ہمیں پیغام بھیجیں",
+      nameLabel: "پورا نام *",
+      emailLabel: "ای میل ایڈریس *",
+      phoneLabel: "فون نمبر",
+      subjectLabel: "موضوع *",
+      selectOption: "موضوع منتخب کریں",
+      generalOption: "عام استفسار",
+      supportOption: "تکنیکی سپورٹ",
+      salesOption: "فروخت کا سوال",
+      partnershipOption: "شراکت داری",
+      otherOption: "دیگر",
+      messageLabel: "پیغام *",
+      submitBtn: "پیغام بھیجیں",
+      infoTitle: "رابطے کی معلومات",
+      addressTitle: "پتہ",
+      addressText: "123 بزنس سٹریٹ، سوٹ 100\nشہر، ریاست 12345",
+      phoneTitle: "فون",
+      phoneText: "+1 (555) 123-4567",
+      emailTitle: "ای میل",
+      emailText: "info@mycompany.com",
+      hoursTitle: "کاروباری اوقات",
+      hoursText: "پیر - جمعہ: صبح 9:00 - شام 6:00\nہفتہ: صبح 10:00 - شام 4:00",
+      mapTitle: "ہمیں تلاش کریں",
+      mapPlaceholder: "انٹرایکٹو نقشہ جلد آ رہا ہے"
+    },
+    
+    // Gallery Page Content
+    gallery: {
+      pageTitle: "گیلری",
+      pageSubtitle: "ہماری تصاویر اور پروجیکٹس کی مجموعہ کو دریافت کریں",
+      item1Title: "پروجیکٹ شوکیس",
+      item1Desc: "ہمارے تازہ ترین پروجیکٹ کی نمایاں خصوصیات اور کامیابیاں",
+      item2Title: "ٹیم کے واقعات",
+      item2Desc: "ہماری شاندار ٹیم کے ساتھ پردے کے پیچھے",
+      item3Title: "دفتری جگہ",
+      item3Desc: "ہمارا جدید اور متاثر کن کام کا ماحول",
+      item4Title: "ٹیکنالوجی",
+      item4Desc: "جدید ٹیکنالوجی اور جدت",
+      item5Title: "ترقی اور کامیابی",
+      item5Desc: "مسلسل بہتری کا ہمارا سفر",
+      item6Title: "انعامات اور شناخت",
+      item6Desc: "ہماری کامیابیوں اور سنگ میل کا جشن",
+      item7Title: "شراکت داریاں",
+      item7Desc: "صنعت کے رہنماؤں کے ساتھ تعاون",
+      item8Title: "جدت",
+      item8Desc: "حدود کو آگے بڑھانا اور نئے خیالات کی تلاش"
+    },
+    
+    // Footer
+    footer: {
+      content: "© 2024 میری کمپنی۔ تمام حقوق محفوظ ہیں۔ جدید کاروباروں کے لیے پیشہ ورانہ خدمات"
+    },
+    
+    // Language settings
     langAttr: "ur",
     dirClass: "rtl"
   }
@@ -320,7 +387,6 @@ function applyLanguage(lang) {
 }
 
 function updateContent(t) {
-  // Helper function to safely update element text
   const updateElement = (id, text) => {
     const element = document.getElementById(id);
     if (element) {
@@ -335,146 +401,148 @@ function updateContent(t) {
     }
   };
 
-  // Update all translatable content
-  updateElement("companyName", t.companyName);
-  updateElement("navHome", t.navHome);
-  updateElement("navCommittee", t.navCommittee);
-  updateElement("navEducation", t.navEducation);
-  updateElement("navGallery", t.navGallery);
-  updateElement("navTab5", t.navTab5);
-  updateElement("navTab6", t.navTab6);
-  updateElement("navContact", t.navContact);
-  updateElement("navCommitteeSub1", t.navCommitteeSub1);
-  updateElement("navCommitteeSub2", t.navCommitteeSub2);
-  updateElement("navEducationSub1", t.navEducationSub1);
-  updateElement("navEducationSub2", t.navEducationSub2);
+  // Banner content
+  updateElement("companyName", t.banner.companyName);
+  
+  // Navigation content
+  updateElement("navHome", t.nav.home);
+  updateElement("navAboutUs", t.nav.aboutUs);
+  updateElement("navEducation", t.nav.education);
+  updateElement("navGallery", t.nav.gallery);
+  updateElement("navTab5", t.nav.tab5);
+  updateElement("navTab6", t.nav.tab6);
+  updateElement("navContact", t.nav.contact);
+  updateElement("navCommitteeSub1", t.nav.committeeSub1);
+  updateElement("navCommitteeSub2", t.nav.committeeSub2);
+  updateElement("navEducationSub1", t.nav.educationSub1);
+  updateElement("navEducationSub2", t.nav.educationSub2);
   
   // Side menu content
-  updateElement("sideMenuTitle", t.sideMenuTitle);
-  updateElement("sideNavHome", t.sideNavHome);
-  updateElement("sideNavCommittee", t.sideNavCommittee);
-  updateElement("sideNavEducation", t.sideNavEducation);
-  updateElement("sideNavGallery", t.sideNavGallery);
-  updateElement("sideNavTab5", t.sideNavTab5);
-  updateElement("sideNavTab6", t.sideNavTab6);
-  updateElement("sideNavContact", t.sideNavContact);
-  updateElement("sideNavCommitteeSub1", t.sideNavCommitteeSub1);
-  updateElement("sideNavCommitteeSub2", t.sideNavCommitteeSub2);
-  updateElement("sideNavEducationSub1", t.sideNavEducationSub1);
-  updateElement("sideNavEducationSub2", t.sideNavEducationSub2);
+  updateElement("sideMenuTitle", t.sideMenu.title);
+  updateElement("sideNavHome", t.sideMenu.home);
+  updateElement("sideNavAboutUs", t.sideMenu.aboutUs);
+  updateElement("sideNavEducation", t.sideMenu.education);
+  updateElement("sideNavGallery", t.sideMenu.gallery);
+  updateElement("sideNavTab5", t.sideMenu.tab5);
+  updateElement("sideNavTab6", t.sideMenu.tab6);
+  updateElement("sideNavContact", t.sideMenu.contact);
+  updateElement("sideNavCommitteeSub1", t.sideMenu.committeeSub1);
+  updateElement("sideNavCommitteeSub2", t.sideMenu.committeeSub2);
+  updateElement("sideNavEducationSub1", t.sideMenu.educationSub1);
+  updateElement("sideNavEducationSub2", t.sideMenu.educationSub2);
   
-  // Page content
-  updateElement("mainContent", t.mainContent);
-  updateElement("infoTitle1", t.infoTitle1);
-  updateElement("infoDesc1", t.infoDesc1);
-  updateElement("infoLink1", t.infoLink1);
-  updateElement("infoTitle2", t.infoTitle2);
-  updateElement("infoDesc2", t.infoDesc2);
-  updateElement("infoLink2", t.infoLink2);
-  updateElement("infoTitle3", t.infoTitle3);
-  updateElement("infoDesc3", t.infoDesc3);
-  updateElement("infoLink3", t.infoLink3);
-  updateElement("infoTitle4", t.infoTitle4);
-  updateElement("infoDesc4", t.infoDesc4);
-  updateElement("infoLink4", t.infoLink4);
-  updateElement("aboutTitle", t.aboutTitle);
-  updateElement("aboutDescription", t.aboutDescription);
-  updateElement("aboutLink", t.aboutLink);
-  updateElement("aboutImage", t.aboutImage);
+  // Home page content
+  updateElement("mainContent", t.home.mainContent);
+  updateElement("infoTitle1", t.home.infoTitle1);
+  updateElement("infoDesc1", t.home.infoDesc1);
+  updateElement("infoLink1", t.home.infoLink1);
+  updateElement("infoTitle2", t.home.infoTitle2);
+  updateElement("infoDesc2", t.home.infoDesc2);
+  updateElement("infoLink2", t.home.infoLink2);
+  updateElement("infoTitle3", t.home.infoTitle3);
+  updateElement("infoDesc3", t.home.infoDesc3);
+  updateElement("infoLink3", t.home.infoLink3);
+  updateElement("infoTitle4", t.home.infoTitle4);
+  updateElement("infoDesc4", t.home.infoDesc4);
+  updateElement("infoLink4", t.home.infoLink4);
+  updateElement("aboutTitle", t.home.aboutTitle);
+  updateElement("aboutDescription", t.home.aboutDescription);
+  updateElement("aboutLink", t.home.aboutLink);
+  updateElement("aboutImage", t.home.aboutImage);
   
   // About page content
-  updateElement("storyTitle", t.storyTitle);
-  updateElement("storyContent1", t.storyContent1);
-  updateElement("storyContent2", t.storyContent2);
-  updateElement("storyContent3", t.storyContent3);
-  updateElement("teamTitle", t.teamTitle);
-  updateElement("teamSubtitle", t.teamSubtitle);
-  updateElement("member1Name", t.member1Name);
-  updateElement("member1Role", t.member1Role);
-  updateElement("member1Desc", t.member1Desc);
-  updateElement("member2Name", t.member2Name);
-  updateElement("member2Role", t.member2Role);
-  updateElement("member2Desc", t.member2Desc);
-  updateElement("member3Name", t.member3Name);
-  updateElement("member3Role", t.member3Role);
-  updateElement("member3Desc", t.member3Desc);
-  updateElement("member4Name", t.member4Name);
-  updateElement("member4Role", t.member4Role);
-  updateElement("member4Desc", t.member4Desc);
-  updateElement("valuesTitle", t.valuesTitle);
-  updateElement("value1Title", t.value1Title);
-  updateElement("value1Desc", t.value1Desc);
-  updateElement("value2Title", t.value2Title);
-  updateElement("value2Desc", t.value2Desc);
-  updateElement("value3Title", t.value3Title);
-  updateElement("value3Desc", t.value3Desc);
-  updateElement("value4Title", t.value4Title);
-  updateElement("value4Desc", t.value4Desc);
-  updateElement("pageTitle", t.pageTitle);
-  updateElement("pageSubtitle", t.pageSubtitle);
+  updateElement("pageTitle", t.about.pageTitle);
+  updateElement("pageSubtitle", t.about.pageSubtitle);
+  updateElement("storyTitle", t.about.storyTitle);
+  updateElement("storyContent1", t.about.storyContent1);
+  updateElement("storyContent2", t.about.storyContent2);
+  updateElement("storyContent3", t.about.storyContent3);
+  updateElement("teamTitle", t.about.teamTitle);
+  updateElement("teamSubtitle", t.about.teamSubtitle);
+  updateElement("member1Name", t.about.member1Name);
+  updateElement("member1Role", t.about.member1Role);
+  updateElement("member1Desc", t.about.member1Desc);
+  updateElement("member2Name", t.about.member2Name);
+  updateElement("member2Role", t.about.member2Role);
+  updateElement("member2Desc", t.about.member2Desc);
+  updateElement("member3Name", t.about.member3Name);
+  updateElement("member3Role", t.about.member3Role);
+  updateElement("member3Desc", t.about.member3Desc);
+  updateElement("member4Name", t.about.member4Name);
+  updateElement("member4Role", t.about.member4Role);
+  updateElement("member4Desc", t.about.member4Desc);
+  updateElement("valuesTitle", t.about.valuesTitle);
+  updateElement("value1Title", t.about.value1Title);
+  updateElement("value1Desc", t.about.value1Desc);
+  updateElement("value2Title", t.about.value2Title);
+  updateElement("value2Desc", t.about.value2Desc);
+  updateElement("value3Title", t.about.value3Title);
+  updateElement("value3Desc", t.about.value3Desc);
+  updateElement("value4Title", t.about.value4Title);
+  updateElement("value4Desc", t.about.value4Desc);
   
   // Contact page content
-  updateElement("contactPageTitle", t.contactPageTitle);
-  updateElement("contactPageSubtitle", t.contactPageSubtitle);
-  updateElement("formTitle", t.formTitle);
-  updateElement("nameLabel", t.nameLabel);
-  updateElement("emailLabel", t.emailLabel);
-  updateElement("phoneLabel", t.phoneLabel);
-  updateElement("subjectLabel", t.subjectLabel);
-  updateElement("selectOption", t.selectOption);
-  updateElement("generalOption", t.generalOption);
-  updateElement("supportOption", t.supportOption);
-  updateElement("salesOption", t.salesOption);
-  updateElement("partnershipOption", t.partnershipOption);
-  updateElement("otherOption", t.otherOption);
-  updateElement("messageLabel", t.messageLabel);
-  updateElement("submitBtn", t.submitBtn);
-  updateElement("infoTitle", t.infoTitle);
-  updateElement("addressTitle", t.addressTitle);
-  updateElementHTML("addressText", t.addressText.replace('\n', '<br>'));
-  updateElement("phoneTitle", t.phoneTitle);
-  updateElement("phoneText", t.phoneText);
-  updateElement("emailTitle", t.emailTitle);
-  updateElement("emailText", t.emailText);
-  updateElement("hoursTitle", t.hoursTitle);
-  updateElementHTML("hoursText", t.hoursText.replace('\n', '<br>'));
-  updateElement("mapTitle", t.mapTitle);
-  updateElement("mapPlaceholder", t.mapPlaceholder);
+  updateElement("contactPageTitle", t.contact.pageTitle);
+  updateElement("contactPageSubtitle", t.contact.pageSubtitle);
+  updateElement("formTitle", t.contact.formTitle);
+  updateElement("nameLabel", t.contact.nameLabel);
+  updateElement("emailLabel", t.contact.emailLabel);
+  updateElement("phoneLabel", t.contact.phoneLabel);
+  updateElement("subjectLabel", t.contact.subjectLabel);
+  updateElement("selectOption", t.contact.selectOption);
+  updateElement("generalOption", t.contact.generalOption);
+  updateElement("supportOption", t.contact.supportOption);
+  updateElement("salesOption", t.contact.salesOption);
+  updateElement("partnershipOption", t.contact.partnershipOption);
+  updateElement("otherOption", t.contact.otherOption);
+  updateElement("messageLabel", t.contact.messageLabel);
+  updateElement("submitBtn", t.contact.submitBtn);
+  updateElement("infoTitle", t.contact.infoTitle);
+  updateElement("addressTitle", t.contact.addressTitle);
+  updateElement("addressText", t.contact.addressText);
+  updateElement("phoneTitle", t.contact.phoneTitle);
+  updateElement("phoneText", t.contact.phoneText);
+  updateElement("emailTitle", t.contact.emailTitle);
+  updateElement("emailText", t.contact.emailText);
+  updateElement("hoursTitle", t.contact.hoursTitle);
+  updateElement("hoursText", t.contact.hoursText);
+  updateElement("mapTitle", t.contact.mapTitle);
+  updateElement("mapPlaceholder", t.contact.mapPlaceholder);
   
   // Gallery page content
-  updateElement("galleryPageTitle", t.galleryPageTitle);
-  updateElement("galleryPageSubtitle", t.galleryPageSubtitle);
+  updateElement("galleryPageTitle", t.gallery.pageTitle);
+  updateElement("galleryPageSubtitle", t.gallery.pageSubtitle);
+  updateElement("galleryItem1Title", t.gallery.item1Title);
+  updateElement("galleryItem1Desc", t.gallery.item1Desc);
+  updateElement("galleryItem2Title", t.gallery.item2Title);
+  updateElement("galleryItem2Desc", t.gallery.item2Desc);
+  updateElement("galleryItem3Title", t.gallery.item3Title);
+  updateElement("galleryItem3Desc", t.gallery.item3Desc);
+  updateElement("galleryItem4Title", t.gallery.item4Title);
+  updateElement("galleryItem4Desc", t.gallery.item4Desc);
+  updateElement("galleryItem5Title", t.gallery.item5Title);
+  updateElement("galleryItem5Desc", t.gallery.item5Desc);
+  updateElement("galleryItem6Title", t.gallery.item6Title);
+  updateElement("galleryItem6Desc", t.gallery.item6Desc);
+  updateElement("galleryItem7Title", t.gallery.item7Title);
+  updateElement("galleryItem7Desc", t.gallery.item7Desc);
+  updateElement("galleryItem8Title", t.gallery.item8Title);
+  updateElement("galleryItem8Desc", t.gallery.item8Desc);
   
-  // Gallery items
-  updateElement("galleryItem1Title", t.galleryItem1Title);
-  updateElement("galleryItem1Desc", t.galleryItem1Desc);
-  updateElement("galleryItem2Title", t.galleryItem2Title);
-  updateElement("galleryItem2Desc", t.galleryItem2Desc);
-  updateElement("galleryItem3Title", t.galleryItem3Title);
-  updateElement("galleryItem3Desc", t.galleryItem3Desc);
-  updateElement("galleryItem4Title", t.galleryItem4Title);
-  updateElement("galleryItem4Desc", t.galleryItem4Desc);
-  updateElement("galleryItem5Title", t.galleryItem5Title);
-  updateElement("galleryItem5Desc", t.galleryItem5Desc);
-  updateElement("galleryItem6Title", t.galleryItem6Title);
-  updateElement("galleryItem6Desc", t.galleryItem6Desc);
-  updateElement("galleryItem7Title", t.galleryItem7Title);
-  updateElement("galleryItem7Desc", t.galleryItem7Desc);
-  updateElement("galleryItem8Title", t.galleryItem8Title);
-  updateElement("galleryItem8Desc", t.galleryItem8Desc);
-  
-  updateElementHTML("footerContent", t.footerContent);
+  // Footer content
+  updateElementHTML("footerContent", t.footer.content);
 }
 
 function updateButtonStates(lang) {
   const enBtn = document.getElementById("enBtn");
   const urBtn = document.getElementById("urBtn");
   
-  if (enBtn) enBtn.classList.toggle("active", lang === "en");
-  if (urBtn) urBtn.classList.toggle("active", lang === "ur");
+  if (enBtn && urBtn) {
+    enBtn.classList.toggle("active", lang === "en");
+    urBtn.classList.toggle("active", lang === "ur");
+  }
 }
 
-// Theme toggle function
 function toggleTheme() {
   isDarkTheme = !isDarkTheme;
   applyTheme();
@@ -485,25 +553,22 @@ function applyTheme() {
   const body = document.getElementById("mainBody");
   const themeToggle = document.getElementById("themeToggle");
   
-  if (!body) return;
+  if (!body || !themeToggle) return;
   
   if (isDarkTheme) {
     body.classList.add('dark');
-    if (themeToggle) {
-      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
   } else {
     body.classList.remove('dark');
-    if (themeToggle) {
-      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
   }
 }
 
-// Side menu functions
 function toggleSideMenu() {
   const sideMenu = document.getElementById("sideMenu");
   const overlay = document.getElementById("overlay");
+  
+  if (!sideMenu || !overlay) return;
   
   isSideMenuOpen = !isSideMenuOpen;
   
@@ -548,6 +613,14 @@ function showSlide(index) {
 }
 
 function changeSlide(direction) {
+  // In RTL mode, reverse the direction
+  const body = document.getElementById("mainBody");
+  const isRTL = body.classList.contains('rtl');
+  
+  if (isRTL) {
+    direction = -direction;
+  }
+  
   showSlide(currentSlide + direction);
   resetSlideInterval();
 }
@@ -596,9 +669,44 @@ function handleSubmit(event) {
   event.target.reset();
 }
 
+// Initialize dropdown functionality for touch devices
+function initializeDropdowns() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const link = dropdown.querySelector('a');
+    
+    link.addEventListener('click', function(e) {
+      // Check if it's a touch device or if it's in the side menu
+      if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || dropdown.closest('.side-menu')) {
+        e.preventDefault();
+        
+        // Close other dropdowns
+        dropdowns.forEach(other => {
+          if (other !== dropdown) {
+            other.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+      }
+    });
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Load saved preferences
+  // Load saved preferences immediately
   loadPreferences();
   
   // Initialize gallery if it exists
@@ -613,4 +721,15 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactForm) {
     contactForm.addEventListener('submit', handleSubmit);
   }
-}); 
+  
+  // Initialize dropdown functionality
+  initializeDropdowns();
+});
+
+// Also load preferences immediately for faster page transitions
+if (document.readyState === 'loading') {
+  // Document is still loading, wait for DOMContentLoaded
+} else {
+  // DOM is already loaded, load preferences immediately
+  loadPreferences();
+} 

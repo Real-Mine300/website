@@ -6,565 +6,7 @@
   <title>Contact Us - My Company</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      transition: all 0.3s ease;
-      overflow-x: hidden;
-    }
-
-    /* Light Theme */
-    .ltr {
-      direction: ltr;
-      text-align: left;
-      background-color: #ffffff;
-      color: #333333;
-    }
-
-    .rtl {
-      direction: rtl;
-      text-align: right;
-      font-family: 'Noto Nastaliq Urdu', serif;
-      background-color: #f8f9fa;
-      color: #333333;
-    }
-
-    /* Dark Theme */
-    .ltr.dark {
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
-
-    .rtl.dark {
-      background-color: #1a1a1a;
-      color: #ffffff;
-    }
-
-    /* Header/Banner */
-    .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1000;
-    }
-
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo {
-      width: 50px;
-      height: 50px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #667eea;
-    }
-
-    .company-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .controls {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    /* Navigation */
-    .nav {
-      background-color: #f8f9fa;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #e9ecef;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .dark .nav {
-      background-color: #2d2d2d;
-      border-bottom-color: #404040;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    .nav-item a {
-      text-decoration: none;
-      color: inherit;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      display: block;
-    }
-
-    .nav-item a:hover {
-      background-color: #667eea;
-      color: white;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 0.5rem;
-      background: none;
-      border: none;
-      color: inherit;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: currentColor;
-      margin: 3px 0;
-      transition: 0.3s;
-      border-radius: 2px;
-    }
-
-    /* Side Menu */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      width: 300px;
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      z-index: 2000;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      overflow-y: auto;
-    }
-
-    .side-menu.rtl {
-      transform: translateX(100%);
-    }
-
-    .side-menu.open {
-      transform: translateX(0);
-    }
-
-    .side-menu.rtl.open {
-      transform: translateX(0);
-    }
-
-    .side-menu-header {
-      padding: 2rem 1.5rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .side-menu-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .side-menu-list {
-      list-style: none;
-      padding: 1rem 0;
-    }
-
-    .side-menu-item {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .side-menu-item a {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .side-menu-item a:hover {
-      background-color: rgba(255,255,255,0.1);
-    }
-
-    /* Overlay */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: 1500;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Page Header */
-    .page-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .page-header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* Main Content */
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 2rem;
-    }
-
-    /* Contact Form */
-    .contact-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .dark .contact-form {
-      background-color: #333333;
-      color: white;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .dark .form-group label {
-      color: white;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 0.75rem;
-      border: 2px solid #e9ecef;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      background-color: white;
-      color: #333;
-    }
-
-    .dark .form-group input,
-    .dark .form-group textarea,
-    .dark .form-group select {
-      background-color: #444;
-      border-color: #555;
-      color: white;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .submit-btn {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    /* Contact Info */
-    .contact-info {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .dark .contact-info {
-      background-color: #2d2d2d;
-    }
-
-    .contact-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: #333;
-    }
-
-    .dark .contact-info h3 {
-      color: white;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .dark .contact-item {
-      background-color: #333333;
-      color: white;
-    }
-
-    .contact-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .contact-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
-      margin-right: 1rem;
-    }
-
-    .contact-details h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-      color: #333;
-    }
-
-    .dark .contact-details h4 {
-      color: white;
-    }
-
-    .contact-details p {
-      color: #666;
-      margin: 0;
-    }
-
-    .dark .contact-details p {
-      color: #ccc;
-    }
-
-    /* Map Section */
-    .map-section {
-      margin-top: 4rem;
-      background: #f8f9fa;
-      padding: 3rem 2rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-
-    .dark .map-section {
-      background-color: #2d2d2d;
-    }
-
-    .map-section h3 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #333;
-    }
-
-    .dark .map-section h3 {
-      color: white;
-    }
-
-    .map-placeholder {
-      width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    /* Footer */
-    .footer {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    /* Buttons */
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .theme-toggle {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .lang-btn {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .lang-btn:hover {
-      background: rgba(255,255,255,0.3);
-    }
-
-    .lang-btn.active {
-      background: rgba(255,255,255,0.4);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-list {
-        display: none;
-      }
-
-      .nav-container {
-        justify-content: space-between;
-      }
-
-      .page-header h1 {
-        font-size: 2rem;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .main-content {
-        padding: 2rem 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .header {
-        padding: 1rem;
-      }
-
-      .nav {
-        padding: 1rem;
-      }
-
-      .page-header {
-        padding: 3rem 1rem;
-      }
-
-      .page-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .side-menu {
-        width: 280px;
-      }
-
-      .contact-form,
-      .contact-info {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body id="mainBody" class="rtl">
   <!-- Header/Banner -->
@@ -592,9 +34,21 @@
       </button>
       <ul class="nav-list" id="navList">
         <li class="nav-item"><a href="index.html" id="navHome">Home</a></li>
-        <li class="nav-item"><a href="#" id="navTab2">Tab 2</a></li>
-        <li class="nav-item"><a href="#" id="navTab3">Tab 3</a></li>
-        <li class="nav-item"><a href="#" id="navTab4">Tab 4</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navAboutUs">About us</a>
+          <div class="dropdown-content">
+            <a href="committee.html" id="navCommitteeSub1">Committee</a>
+            <a href="buildings.html" id="navCommitteeSub2">Buildings</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navEducation">Education</a>
+          <div class="dropdown-content">
+            <a href="syllabus.html" id="navEducationSub1">Syllabus</a>
+            <a href="classes.html" id="navEducationSub2">Classes</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="gallery.html" id="navGallery">Gallery</a></li>
         <li class="nav-item"><a href="#" id="navTab5">Tab 5</a></li>
         <li class="nav-item"><a href="#" id="navTab6">Tab 6</a></li>
         <li class="nav-item"><a href="contact.html" id="navContact">Contact Us</a></li>
@@ -610,11 +64,23 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <ul class="side-menu-list">
+    <ul class="side-menu-list" id="sideMenu-list">
       <li class="side-menu-item"><a href="index.html" id="sideNavHome">Home</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab2">Tab 2</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab3">Tab 3</a></li>
-      <li class="side-menu-item"><a href="#" id="sideNavTab4">Tab 4</a></li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavAboutUs">About Us</a>
+        <div class="dropdown-content">
+          <a href="committee.html" id="sideNavCommitteeSub1">Committee</a>
+          <a href="buildings.html" id="sideNavCommitteeSub2">Buildings</a>
+        </div>
+      </li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavEducation">Education</a>
+        <div class="dropdown-content">
+          <a href="syllabus.html" id="sideNavEducationSub1">Syllabus</a>
+          <a href="classes.html" id="sideNavEducationSub2">Classes</a>
+        </div>
+      </li>
+      <li class="side-menu-item"><a href="gallery.html" id="sideNavGallery">Gallery</a></li>
       <li class="side-menu-item"><a href="#" id="sideNavTab5">Tab 5</a></li>
       <li class="side-menu-item"><a href="#" id="sideNavTab6">Tab 6</a></li>
       <li class="side-menu-item"><a href="contact.html" id="sideNavContact">Contact Us</a></li>
@@ -626,8 +92,8 @@
 
   <!-- Page Header -->
   <div class="page-header">
-    <h1 id="pageTitle">Contact Us</h1>
-    <p id="pageSubtitle">Get in touch with us. We'd love to hear from you!</p>
+    <h1 id="contactPageTitle">Contact Us</h1>
+    <p id="contactPageSubtitle">Get in touch with us. We'd love to hear from you!</p>
   </div>
 
   <!-- Main Content -->
@@ -635,8 +101,8 @@
     <div class="contact-container">
       <!-- Contact Form -->
       <div class="contact-form">
-        <h3 id="formTitle">Send us a Message</h3>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <h2 id="formTitle">Send us a Message</h2>
+        <form onsubmit="handleSubmit(event)">
           <div class="form-group">
             <label for="name" id="nameLabel">Full Name *</label>
             <input type="text" id="name" name="name" required>
@@ -666,7 +132,7 @@
           
           <div class="form-group">
             <label for="message" id="messageLabel">Message *</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           
           <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
@@ -686,7 +152,7 @@
             <p id="addressText">123 Business Street, Suite 100<br>City, State 12345</p>
           </div>
         </div>
-
+        
         <div class="contact-item">
           <div class="contact-icon">
             <i class="fas fa-phone"></i>
@@ -696,7 +162,7 @@
             <p id="phoneText">+1 (555) 123-4567</p>
           </div>
         </div>
-
+        
         <div class="contact-item">
           <div class="contact-icon">
             <i class="fas fa-envelope"></i>
@@ -706,7 +172,7 @@
             <p id="emailText">info@mycompany.com</p>
           </div>
         </div>
-
+        
         <div class="contact-item">
           <div class="contact-icon">
             <i class="fas fa-clock"></i>
@@ -723,255 +189,17 @@
     <div class="map-section">
       <h3 id="mapTitle">Find Us</h3>
       <div class="map-placeholder" id="mapPlaceholder">
-        Interactive Map Coming Soon
+        <i class="fas fa-map"></i>
+        <p>Interactive Map Coming Soon</p>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <div id="footerContent">
-      <p>&copy; 2024 My Company. All rights reserved.</p>
-      <p>Professional services for modern businesses</p>
-    </div>
+    <p id="footerContent">© 2024 My Company. All rights reserved. Professional services for modern businesses</p>
   </footer>
 
-  <script>
-    // Theme management
-    let isDarkTheme = false;
-
-    // Side menu management
-    let isSideMenuOpen = false;
-
-    // Translations
-    const translations = {
-      en: {
-        companyName: "My Company",
-        navHome: "Home",
-        navTab2: "Tab 2",
-        navTab3: "Tab 3",
-        navTab4: "Tab 4",
-        navTab5: "Tab 5",
-        navTab6: "Tab 6",
-        navContact: "Contact Us",
-        sideMenuTitle: "Menu",
-        sideNavHome: "Home",
-        sideNavTab2: "Tab 2",
-        sideNavTab3: "Tab 3",
-        sideNavTab4: "Tab 4",
-        sideNavTab5: "Tab 5",
-        sideNavTab6: "Tab 6",
-        sideNavContact: "Contact Us",
-        pageTitle: "Contact Us",
-        pageSubtitle: "Get in touch with us. We'd love to hear from you!",
-        formTitle: "Send us a Message",
-        nameLabel: "Full Name *",
-        emailLabel: "Email Address *",
-        phoneLabel: "Phone Number",
-        subjectLabel: "Subject *",
-        selectOption: "Select a subject",
-        generalOption: "General Inquiry",
-        supportOption: "Technical Support",
-        salesOption: "Sales Question",
-        partnershipOption: "Partnership",
-        otherOption: "Other",
-        messageLabel: "Message *",
-        submitBtn: "Send Message",
-        infoTitle: "Contact Information",
-        addressTitle: "Address",
-        addressText: "123 Business Street, Suite 100\nCity, State 12345",
-        phoneTitle: "Phone",
-        phoneText: "+1 (555) 123-4567",
-        emailTitle: "Email",
-        emailText: "info@mycompany.com",
-        hoursTitle: "Business Hours",
-        hoursText: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM",
-        mapTitle: "Find Us",
-        mapPlaceholder: "Interactive Map Coming Soon",
-        footerContent: "© 2024 My Company. All rights reserved. Professional services for modern businesses",
-        langAttr: "en",
-        dirClass: "ltr"
-      },
-      ur: {
-        companyName: "میری کمپنی",
-        navHome: "ہوم",
-        navTab2: "ٹیب 2",
-        navTab3: "ٹیب 3",
-        navTab4: "ٹیب 4",
-        navTab5: "ٹیب 5",
-        navTab6: "ٹیب 6",
-        navContact: "ہم سے رابطہ کریں",
-        sideMenuTitle: "مینو",
-        sideNavHome: "ہوم",
-        sideNavTab2: "ٹیب 2",
-        sideNavTab3: "ٹیب 3",
-        sideNavTab4: "ٹیب 4",
-        sideNavTab5: "ٹیب 5",
-        sideNavTab6: "ٹیب 6",
-        sideNavContact: "ہم سے رابطہ کریں",
-        pageTitle: "ہم سے رابطہ کریں",
-        pageSubtitle: "ہم سے رابطہ کریں۔ ہم آپ سے سننا پسند کریں گے!",
-        formTitle: "ہمیں پیغام بھیجیں",
-        nameLabel: "پورا نام *",
-        emailLabel: "ای میل ایڈریس *",
-        phoneLabel: "فون نمبر",
-        subjectLabel: "موضوع *",
-        selectOption: "موضوع منتخب کریں",
-        generalOption: "عام استفسار",
-        supportOption: "تکنیکی سپورٹ",
-        salesOption: "فروخت کا سوال",
-        partnershipOption: "شراکت داری",
-        otherOption: "دیگر",
-        messageLabel: "پیغام *",
-        submitBtn: "پیغام بھیجیں",
-        infoTitle: "رابطے کی معلومات",
-        addressTitle: "پتہ",
-        addressText: "123 بزنس سٹریٹ، سوٹ 100\nشہر، ریاست 12345",
-        phoneTitle: "فون",
-        phoneText: "+1 (555) 123-4567",
-        emailTitle: "ای میل",
-        emailText: "info@mycompany.com",
-        hoursTitle: "کاروباری اوقات",
-        hoursText: "پیر - جمعہ: صبح 9:00 - شام 6:00\nہفتہ: صبح 10:00 - شام 4:00",
-        mapTitle: "ہمیں تلاش کریں",
-        mapPlaceholder: "انٹرایکٹو نقشہ جلد آ رہا ہے",
-        footerContent: "© 2024 میری کمپنی۔ تمام حقوق محفوظ ہیں۔ جدید کاروباروں کے لیے پیشہ ورانہ خدمات",
-        langAttr: "ur",
-        dirClass: "rtl"
-      }
-    };
-
-    // Language switching function
-    function switchLang(lang) {
-      const t = translations[lang];
-      const body = document.getElementById("mainBody");
-      const sideMenu = document.getElementById("sideMenu");
-      
-      // Update body class
-      body.className = t.dirClass;
-      if (isDarkTheme) {
-        body.classList.add('dark');
-      }
-      
-      // Update side menu class for RTL/LTR
-      sideMenu.className = 'side-menu';
-      if (t.dirClass === 'rtl') {
-        sideMenu.classList.add('rtl');
-      }
-      
-      // Update document language
-      document.documentElement.lang = t.langAttr;
-      
-      // Update all translatable content
-      document.getElementById("companyName").innerText = t.companyName;
-      document.getElementById("navHome").innerText = t.navHome;
-      document.getElementById("navTab2").innerText = t.navTab2;
-      document.getElementById("navTab3").innerText = t.navTab3;
-      document.getElementById("navTab4").innerText = t.navTab4;
-      document.getElementById("navTab5").innerText = t.navTab5;
-      document.getElementById("navTab6").innerText = t.navTab6;
-      document.getElementById("navContact").innerText = t.navContact;
-      document.getElementById("sideMenuTitle").innerText = t.sideMenuTitle;
-      document.getElementById("sideNavHome").innerText = t.sideNavHome;
-      document.getElementById("sideNavTab2").innerText = t.sideNavTab2;
-      document.getElementById("sideNavTab3").innerText = t.sideNavTab3;
-      document.getElementById("sideNavTab4").innerText = t.sideNavTab4;
-      document.getElementById("sideNavTab5").innerText = t.sideNavTab5;
-      document.getElementById("sideNavTab6").innerText = t.sideNavTab6;
-      document.getElementById("sideNavContact").innerText = t.sideNavContact;
-      document.getElementById("pageTitle").innerText = t.pageTitle;
-      document.getElementById("pageSubtitle").innerText = t.pageSubtitle;
-      document.getElementById("formTitle").innerText = t.formTitle;
-      document.getElementById("nameLabel").innerText = t.nameLabel;
-      document.getElementById("emailLabel").innerText = t.emailLabel;
-      document.getElementById("phoneLabel").innerText = t.phoneLabel;
-      document.getElementById("subjectLabel").innerText = t.subjectLabel;
-      document.getElementById("selectOption").innerText = t.selectOption;
-      document.getElementById("generalOption").innerText = t.generalOption;
-      document.getElementById("supportOption").innerText = t.supportOption;
-      document.getElementById("salesOption").innerText = t.salesOption;
-      document.getElementById("partnershipOption").innerText = t.partnershipOption;
-      document.getElementById("otherOption").innerText = t.otherOption;
-      document.getElementById("messageLabel").innerText = t.messageLabel;
-      document.getElementById("submitBtn").innerText = t.submitBtn;
-      document.getElementById("infoTitle").innerText = t.infoTitle;
-      document.getElementById("addressTitle").innerText = t.addressTitle;
-      document.getElementById("addressText").innerHTML = t.addressText.replace('\n', '<br>');
-      document.getElementById("phoneTitle").innerText = t.phoneTitle;
-      document.getElementById("phoneText").innerText = t.phoneText;
-      document.getElementById("emailTitle").innerText = t.emailTitle;
-      document.getElementById("emailText").innerText = t.emailText;
-      document.getElementById("hoursTitle").innerText = t.hoursTitle;
-      document.getElementById("hoursText").innerHTML = t.hoursText.replace('\n', '<br>');
-      document.getElementById("mapTitle").innerText = t.mapTitle;
-      document.getElementById("mapPlaceholder").innerText = t.mapPlaceholder;
-      document.getElementById("footerContent").innerHTML = t.footerContent;
-      
-      // Update button states
-      document.getElementById("enBtn").classList.toggle("active", lang === "en");
-      document.getElementById("urBtn").classList.toggle("active", lang === "ur");
-    }
-
-    // Theme toggle function
-    function toggleTheme() {
-      isDarkTheme = !isDarkTheme;
-      const body = document.getElementById("mainBody");
-      const themeToggle = document.getElementById("themeToggle");
-      
-      if (isDarkTheme) {
-        body.classList.add('dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        body.classList.remove('dark');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      }
-    }
-
-    // Side menu functions
-    function toggleSideMenu() {
-      const sideMenu = document.getElementById("sideMenu");
-      const overlay = document.getElementById("overlay");
-      
-      isSideMenuOpen = !isSideMenuOpen;
-      
-      if (isSideMenuOpen) {
-        sideMenu.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } else {
-        sideMenu.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-
-    function closeSideMenu() {
-      const sideMenu = document.getElementById("sideMenu");
-      const overlay = document.getElementById("overlay");
-      
-      isSideMenuOpen = false;
-      sideMenu.classList.remove('open');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // Form submission handler
-    function handleSubmit(event) {
-      event.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      // Here you would typically send the data to your server
-      console.log('Form submitted:', data);
-      
-      // Show success message (you can customize this)
-      alert('Thank you for your message! We will get back to you soon.');
-      
-      // Reset form
-      event.target.reset();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html> 
