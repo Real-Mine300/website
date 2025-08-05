@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - My Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body id="mainBody" class="rtl auth-page">
+  <!-- Header/Banner -->
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo">ML</div>
+      <div class="company-name" id="companyName">My Company</div>
+    </div>
+    <div class="controls">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="lang-btn" onclick="switchLang('en')" id="enBtn">English</button>
+      <button class="lang-btn active" onclick="switchLang('ur')" id="urBtn">اردو</button>
+    </div>
+  </header>
+
+
+
+  <!-- Signup Form Container -->
+  <div class="auth-container">
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h1 id="signupTitle">Create Account</h1>
+        <p id="signupSubtitle">Join us! Create your account to get started</p>
+      </div>
+      
+      <form class="auth-form" id="signupForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signupFirstName" id="firstNameLabel">First Name</label>
+            <input type="text" id="signupFirstName" name="firstName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupLastName" id="lastNameLabel">Last Name</label>
+            <input type="text" id="signupLastName" name="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupEmail" id="signupEmailLabel">Email Address</label>
+          <input type="email" id="signupEmail" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupPassword" id="signupPasswordLabel">Password</label>
+          <input type="password" id="signupPassword" name="password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="signupConfirmPassword" id="confirmPasswordLabel">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" name="confirmPassword" required>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            <span id="agreeTermsText">I agree to the Terms of Service and Privacy Policy</span>
+          </label>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="newsletterSignup" name="newsletter">
+            <span id="newsletterText">Subscribe to our newsletter for updates</span>
+          </label>
+        </div>
+        
+        <button type="submit" class="auth-submit-btn" id="signupSubmitBtn">
+          <i class="fas fa-user-plus"></i>
+          <span id="signupBtnText">Create Account</span>
+        </button>
+      </form>
+      
+      <div class="auth-footer">
+        <p id="haveAccountText">Already have an account?</p>
+        <a href="login.html" class="auth-link" id="loginLink">Sign In</a>
+      </div>
+      
+      <div class="auth-bottom-message">
+        <p id="existingUserMessage">Already have an account? <a href="login.html" class="auth-link">Log in</a></p>
+      </div>
+      
+      <div class="auth-divider">
+        <span id="orText">or</span>
+      </div>
+      
+      <div class="social-login">
+        <button class="social-btn google-btn" id="googleSignupBtn">
+          <i class="fab fa-google"></i>
+          <span id="googleSignupText">Continue with Google</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div id="footerContent">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+      <p>Professional services for modern businesses</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

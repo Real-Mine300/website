@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - My Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body id="mainBody" class="rtl auth-page">
+  <!-- Header/Banner -->
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo">ML</div>
+      <div class="company-name" id="companyName">My Company</div>
+    </div>
+    <div class="controls">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="lang-btn" onclick="switchLang('en')" id="enBtn">English</button>
+      <button class="lang-btn active" onclick="switchLang('ur')" id="urBtn">اردو</button>
+    </div>
+  </header>
+
+
+
+  <!-- Login Form Container -->
+  <div class="auth-container">
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h1 id="loginTitle">Login</h1>
+        <p id="loginSubtitle">Welcome back! Please sign in to your account</p>
+      </div>
+      
+      <form class="auth-form" id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail" id="emailLabel">Email Address</label>
+          <input type="email" id="loginEmail" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="loginPassword" id="passwordLabel">Password</label>
+          <input type="password" id="loginPassword" name="password" required>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="rememberMe" name="remember">
+            <span id="rememberMeText">Remember me</span>
+          </label>
+        </div>
+        
+        <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">
+          <i class="fas fa-sign-in-alt"></i>
+          <span id="loginBtnText">Sign In</span>
+        </button>
+      </form>
+      
+      <div class="auth-footer">
+        <p id="noAccountText">Don't have an account?</p>
+        <a href="signup.html" class="auth-link" id="signupLink">Create Account</a>
+      </div>
+      
+      <div class="auth-bottom-message">
+        <p id="newUserMessage">New user? <a href="signup.html" class="auth-link">Sign up</a></p>
+      </div>
+      
+      <div class="auth-divider">
+        <span id="orText">or</span>
+      </div>
+      
+      <div class="social-login">
+        <button class="social-btn google-btn" id="googleLoginBtn">
+          <i class="fab fa-google"></i>
+          <span id="googleLoginText">Continue with Google</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div id="footerContent">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+      <p>Professional services for modern businesses</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

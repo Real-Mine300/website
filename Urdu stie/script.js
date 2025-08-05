@@ -20,6 +20,10 @@ const translations = {
     banner: {
       companyName: "My Company"
     },
+    header: {
+      loginLink: "Login",
+      signupLink: "Sign Up"
+    },
     
     // Navigation
     nav: {
@@ -162,6 +166,35 @@ const translations = {
     footer: {
       content: "© 2024 My Company. All rights reserved. Professional services for modern businesses"
     },
+
+    // Authentication Pages
+    auth: {
+      loginTitle: "Login",
+      loginSubtitle: "Welcome back! Please sign in to your account",
+      emailLabel: "Email Address",
+      passwordLabel: "Password",
+      rememberMeText: "Remember me",
+      loginBtnText: "Sign In",
+      noAccountText: "Don't have an account?",
+      signupLink: "Create Account",
+      orText: "or",
+      googleLoginText: "Continue with Google",
+      signupTitle: "Create Account",
+      signupSubtitle: "Join us! Create your account to get started",
+      firstNameLabel: "First Name",
+      lastNameLabel: "Last Name",
+      signupEmailLabel: "Email Address",
+      signupPasswordLabel: "Password",
+      confirmPasswordLabel: "Confirm Password",
+      agreeTermsText: "I agree to the Terms of Service and Privacy Policy",
+      newsletterText: "Subscribe to our newsletter for updates",
+      signupBtnText: "Create Account",
+      haveAccountText: "Already have an account?",
+      loginLink: "Sign In",
+      googleSignupText: "Continue with Google",
+      newUserMessage: "New user? Sign up",
+      existingUserMessage: "Already have an account? Log in"
+    },
     
     // Language settings
     langAttr: "en",
@@ -172,6 +205,10 @@ const translations = {
     // Banner/Header
     banner: {
       companyName: "میری کمپنی"
+    },
+    header: {
+      loginLink: "لاگ ان",
+      signupLink: "سائن اپ"
     },
     
     // Navigation
@@ -315,6 +352,35 @@ const translations = {
     footer: {
       content: "© 2024 میری کمپنی۔ تمام حقوق محفوظ ہیں۔ جدید کاروباروں کے لیے پیشہ ورانہ خدمات"
     },
+
+    // Authentication Pages
+    auth: {
+      loginTitle: "لاگ ان",
+      loginSubtitle: "خوش آمدید! براہ کرم اپنے اکاؤنٹ میں سائن ان کریں",
+      emailLabel: "ای میل ایڈریس",
+      passwordLabel: "پاس ورڈ",
+      rememberMeText: "مجھے یاد رکھیں",
+      loginBtnText: "سائن ان کریں",
+      noAccountText: "اکاؤنٹ نہیں ہے؟",
+      signupLink: "اکاؤنٹ بنائیں",
+      orText: "یا",
+      googleLoginText: "گوگل کے ساتھ جاری رکھیں",
+      signupTitle: "اکاؤنٹ بنائیں",
+      signupSubtitle: "ہمارے ساتھ شامل ہوں! شروع کرنے کے لیے اپنا اکاؤنٹ بنائیں",
+      firstNameLabel: "پہلا نام",
+      lastNameLabel: "آخری نام",
+      signupEmailLabel: "ای میل ایڈریس",
+      signupPasswordLabel: "پاس ورڈ",
+      confirmPasswordLabel: "پاس ورڈ کی تصدیق کریں",
+      agreeTermsText: "میں سروس کی شرائط اور رازداری کی پالیسی سے اتفاق کرتا/کرتی ہوں",
+      newsletterText: "اپ ڈیٹس کے لیے ہمارے نیوز لیٹر کی سبسکرپشن کریں",
+      signupBtnText: "اکاؤنٹ بنائیں",
+      haveAccountText: "پہلے سے اکاؤنٹ ہے؟",
+      loginLink: "سائن ان کریں",
+      googleSignupText: "گوگل کے ساتھ جاری رکھیں",
+      newUserMessage: "نیا صارف؟ سائن اپ کریں",
+      existingUserMessage: "پہلے سے اکاؤنٹ ہے؟ لاگ ان کریں"
+    },
     
     // Language settings
     langAttr: "ur",
@@ -403,6 +469,8 @@ function updateContent(t) {
 
   // Banner content
   updateElement("companyName", t.banner.companyName);
+  updateElement("headerLoginLink", t.header.loginLink);
+  updateElement("headerSignupLink", t.header.signupLink);
   
   // Navigation content
   updateElement("navHome", t.nav.home);
@@ -531,6 +599,34 @@ function updateContent(t) {
   
   // Footer content
   updateElementHTML("footerContent", t.footer.content);
+
+  // Authentication content (if elements exist)
+  updateElement("loginTitle", t.auth.loginTitle);
+  updateElement("loginSubtitle", t.auth.loginSubtitle);
+  updateElement("emailLabel", t.auth.emailLabel);
+  updateElement("passwordLabel", t.auth.passwordLabel);
+  updateElement("rememberMeText", t.auth.rememberMeText);
+  updateElement("loginBtnText", t.auth.loginBtnText);
+  updateElement("noAccountText", t.auth.noAccountText);
+  updateElement("signupLink", t.auth.signupLink);
+  updateElement("orText", t.auth.orText);
+  updateElement("googleLoginText", t.auth.googleLoginText);
+  
+  updateElement("signupTitle", t.auth.signupTitle);
+  updateElement("signupSubtitle", t.auth.signupSubtitle);
+  updateElement("firstNameLabel", t.auth.firstNameLabel);
+  updateElement("lastNameLabel", t.auth.lastNameLabel);
+  updateElement("signupEmailLabel", t.auth.signupEmailLabel);
+  updateElement("signupPasswordLabel", t.auth.signupPasswordLabel);
+  updateElement("confirmPasswordLabel", t.auth.confirmPasswordLabel);
+  updateElement("agreeTermsText", t.auth.agreeTermsText);
+  updateElement("newsletterText", t.auth.newsletterText);
+  updateElement("signupBtnText", t.auth.signupBtnText);
+  updateElement("haveAccountText", t.auth.haveAccountText);
+  updateElement("loginLink", t.auth.loginLink);
+  updateElement("googleSignupText", t.auth.googleSignupText);
+  updateElement("newUserMessage", t.auth.newUserMessage);
+  updateElement("existingUserMessage", t.auth.existingUserMessage);
 }
 
 function updateButtonStates(lang) {
@@ -669,6 +765,68 @@ function handleSubmit(event) {
   event.target.reset();
 }
 
+// Login form submission handler
+function handleLoginSubmit(event) {
+  event.preventDefault();
+  
+  // Get form data
+  const formData = new FormData(event.target);
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const remember = formData.get('remember');
+  
+  // Here you would typically send the data to Supabase
+  console.log('Login form submitted:', { email, password, remember });
+  
+  // For now, just show a placeholder message
+  alert('Login functionality will be connected to Supabase later.');
+  
+  // Reset form
+  event.target.reset();
+}
+
+// Signup form submission handler
+function handleSignupSubmit(event) {
+  event.preventDefault();
+  
+  // Get form data
+  const formData = new FormData(event.target);
+  const firstName = formData.get('firstName');
+  const lastName = formData.get('lastName');
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const confirmPassword = formData.get('confirmPassword');
+  const agreeTerms = formData.get('agreeTerms');
+  const newsletter = formData.get('newsletter');
+  
+  // Basic validation
+  if (password !== confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
+  
+  if (!agreeTerms) {
+    alert('Please agree to the Terms of Service and Privacy Policy.');
+    return;
+  }
+  
+  // Here you would typically send the data to Supabase
+  console.log('Signup form submitted:', { 
+    firstName, 
+    lastName, 
+    email, 
+    password, 
+    agreeTerms, 
+    newsletter 
+  });
+  
+  // For now, just show a placeholder message
+  alert('Signup functionality will be connected to Supabase later.');
+  
+  // Reset form
+  event.target.reset();
+}
+
 // Initialize dropdown functionality for touch devices
 function initializeDropdowns() {
   const dropdowns = document.querySelectorAll('.dropdown');
@@ -722,14 +880,42 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', handleSubmit);
   }
   
+  // Add event listeners for authentication forms
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener('submit', handleLoginSubmit);
+  }
+  
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener('submit', handleSignupSubmit);
+  }
+  
   // Initialize dropdown functionality
   initializeDropdowns();
 });
 
-// Also load preferences immediately for faster page transitions
-if (document.readyState === 'loading') {
-  // Document is still loading, wait for DOMContentLoaded
-} else {
-  // DOM is already loaded, load preferences immediately
+// Load preferences immediately for faster page transitions
+loadPreferences();
+
+// Also load preferences when DOM is ready as backup
+document.addEventListener('DOMContentLoaded', function() {
+  // Load saved preferences immediately
   loadPreferences();
-} 
+  
+  // Initialize gallery if it exists
+  const gallerySlide = document.getElementById("gallerySlide");
+  if (gallerySlide) {
+    showSlide(0);
+    resetSlideInterval();
+  }
+  
+  // Add event listeners for form submission
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleSubmit);
+  }
+  
+  // Initialize dropdown functionality
+  initializeDropdowns();
+}); 
