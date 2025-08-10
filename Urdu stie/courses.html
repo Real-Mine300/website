@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - My Company</title>
+  <title>Classes - My Company</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 </head>
-<body id="mainBody" class="rtl" data-page="contact">
+<body id="mainBody" class="rtl" data-page="courses">
   <!-- Header/Banner -->
   <header class="header">
     <div class="logo-section">
@@ -68,7 +68,7 @@
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <ul class="side-menu-list" id="sideMenu-list">
+    <ul class="side-menu-list">
       <li class="side-menu-item"><a href="index.html" id="sideNavHome">Home</a></li>
       <li class="side-menu-item dropdown">
         <a href="#" id="sideNavAboutUs">About Us</a>
@@ -96,112 +96,126 @@
 
   <!-- Page Header -->
   <div class="page-header">
-    <h1 id="contactPageTitle">Contact Us</h1>
-    <p id="contactPageSubtitle">Get in touch with us. We'd love to hear from you!</p>
+    <h1 id="pageTitle">Classes</h1>
+    <p id="pageSubtitle">Available courses and class schedules</p>
   </div>
 
   <!-- Main Content -->
   <div class="main-content">
-    <div class="contact-container">
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h2 id="formTitle">Send us a Message</h2>
-        <form onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name" id="nameLabel">Full Name *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email" id="emailLabel">Email Address *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone" id="phoneLabel">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-          
-          <div class="form-group">
-            <label for="subject" id="subjectLabel">Subject *</label>
-            <select id="subject" name="subject" required>
-              <option value="" id="selectOption">Select a subject</option>
-              <option value="general" id="generalOption">General Inquiry</option>
-              <option value="support" id="supportOption">Technical Support</option>
-              <option value="sales" id="salesOption">Sales Question</option>
-              <option value="partnership" id="partnershipOption">Partnership</option>
-              <option value="other" id="otherOption">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message" id="messageLabel">Message *</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
-        </form>
-      </div>
+    <div class="content-section">
+      <h2 id="storyTitle">Our Class Offerings</h2>
+      <p id="storyContent1">
+        We offer a wide range of classes designed to meet the diverse learning needs of our 
+        participants. Our classes are structured to provide both theoretical knowledge and 
+        practical skills development.
+      </p>
+      <p id="storyContent2">
+        Each class is led by experienced instructors who are experts in their respective fields. 
+        We maintain small class sizes to ensure personalized attention and effective learning.
+      </p>
+      <p id="storyContent3">
+        Our flexible scheduling options accommodate different learning preferences and time 
+        constraints, making education accessible to everyone.
+      </p>
+    </div>
 
-      <!-- Contact Information -->
-      <div class="contact-info">
-        <h3 id="infoTitle">Contact Information</h3>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-details">
-            <h4 id="addressTitle">Address</h4>
-            <p id="addressText">123 Business Street, Suite 100<br>City, State 12345</p>
-          </div>
-        </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="contact-details">
-            <h4 id="phoneTitle">Phone</h4>
-            <p id="phoneText">+1 (555) 123-4567</p>
+    <!-- Team Section -->
+    <div class="team-section">
+      <h2 id="teamTitle">Available Classes</h2>
+      <p id="teamSubtitle">Comprehensive course offerings for all skill levels</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-avatar">BC</div>
+          <div class="team-name" id="member1Name">Beginner Course</div>
+          <div class="team-role" id="member1Role">Foundation Level</div>
+          <div class="team-description" id="member1Desc">
+            Perfect for newcomers to build strong foundational knowledge.
           </div>
         </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-details">
-            <h4 id="emailTitle">Email</h4>
-            <p id="emailText">info@mycompany.com</p>
+
+        <div class="team-member">
+          <div class="team-avatar">IC</div>
+          <div class="team-name" id="member2Name">Intermediate Course</div>
+          <div class="team-role" id="member2Role">Advanced Skills</div>
+          <div class="team-description" id="member2Desc">
+            Designed for those ready to advance their skills and knowledge.
           </div>
         </div>
-        
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
+
+        <div class="team-member">
+          <div class="team-avatar">AC</div>
+          <div class="team-name" id="member3Name">Advanced Course</div>
+          <div class="team-role" id="member3Role">Expert Level</div>
+          <div class="team-description" id="member3Desc">
+            For experienced professionals seeking mastery and specialization.
           </div>
-          <div class="contact-details">
-            <h4 id="hoursTitle">Business Hours</h4>
-            <p id="hoursText">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+        </div>
+
+        <div class="team-member">
+          <div class="team-avatar">WC</div>
+          <div class="team-name" id="member4Name">Workshop</div>
+          <div class="team-role" id="member4Role">Hands-on Training</div>
+          <div class="team-description" id="member4Desc">
+            Interactive sessions focused on practical application and skills.
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Map Section -->
-    <div class="map-section">
-      <h3 id="mapTitle">Find Us</h3>
-      <div class="map-placeholder" id="mapPlaceholder">
-        <i class="fas fa-map"></i>
-        <p>Interactive Map Coming Soon</p>
+    <!-- Values Section -->
+    <div class="content-section">
+      <h2 id="valuesTitle">Class Features</h2>
+      <div class="values-section">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="value-title" id="value1Title">Flexible Schedule</h3>
+          <p class="value-description" id="value1Desc">
+            Multiple time slots to accommodate different schedules and preferences.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="value-title" id="value2Title">Small Groups</h3>
+          <p class="value-description" id="value2Desc">
+            Limited class sizes for personalized attention and better interaction.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="value-title" id="value3Title">Certification</h3>
+          <p class="value-description" id="value3Desc">
+            Recognized certificates upon successful completion of courses.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="value-title" id="value4Title">Support</h3>
+          <p class="value-description" id="value4Desc">
+            Ongoing support and resources to enhance your learning experience.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
-    <p id="footerContent">© 2024 My Company. All rights reserved. Professional services for modern businesses</p>
+    <div id="footerContent">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+      <p>Professional services for modern businesses</p>
+    </div>
   </footer>
 
   <script src="i18n.js"></script>
