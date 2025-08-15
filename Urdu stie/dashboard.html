@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - My Company</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body id="mainBody" class="rtl" data-page="dashboard" data-require-auth="true">
+  <!-- Header/Banner -->
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo">ML</div>
+      <div class="company-name" id="companyName">My Company</div>
+    </div>
+    <div class="controls">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="lang-btn" onclick="switchLang('en')" id="enBtn">English</button>
+      <button class="lang-btn active" onclick="switchLang('ur')" id="urBtn">اردو</button>
+      <button id="logoutBtn" class="auth-link-btn" style="background: rgba(255, 255, 255, 0.3);">
+        <i class="fas fa-sign-out-alt"></i>
+        <span id="logoutBtnText">Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <button class="hamburger" onclick="toggleSideMenu()" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list" id="navList">
+        <li class="nav-item"><a href="index.html" id="navHome">Home</a></li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navAboutUs">About us</a>
+          <div class="dropdown-content">
+            <a href="committee.html" id="navCommitteeSub1">Committee</a>
+            <a href="buildings.html" id="navCommitteeSub2">Buildings</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" id="navEducation">Education</a>
+          <div class="dropdown-content">
+            <a href="syllabus.html" id="navEducationSub1">Syllabus</a>
+            <a href="classes.html" id="navEducationSub2">Classes</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="gallery.html" id="navGallery">Gallery</a></li>
+        <li class="nav-item"><a href="courses.html" id="navCourses">Courses</a></li>
+        <li class="nav-item"><a href="#" id="navTab6">Tab 6</a></li>
+        <li class="nav-item"><a href="contact.html" id="navContact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <div class="side-menu-header">
+      <h3 id="sideMenuTitle">Menu</h3>
+      <button class="side-menu-close" onclick="closeSideMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="side-menu-list">
+      <li class="side-menu-item"><a href="index.html" id="sideNavHome">Home</a></li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavAboutUs">About Us</a>
+        <div class="dropdown-content">
+          <a href="committee.html" id="sideNavCommitteeSub1">Committee</a>
+          <a href="buildings.html" id="sideNavCommitteeSub2">Buildings</a>
+        </div>
+      </li>
+      <li class="side-menu-item dropdown">
+        <a href="#" id="sideNavEducation">Education</a>
+        <div class="dropdown-content">
+          <a href="syllabus.html" id="sideNavEducationSub1">Syllabus</a>
+          <a href="classes.html" id="sideNavEducationSub2">Classes</a>
+        </div>
+      </li>
+      <li class="side-menu-item"><a href="gallery.html" id="sideNavGallery">Gallery</a></li>
+      <li class="side-menu-item"><a href="courses.html" id="sideNavCourses">Courses</a></li>
+      <li class="side-menu-item"><a href="#" id="sideNavTab6">Tab 6</a></li>
+      <li class="side-menu-item"><a href="contact.html" id="sideNavContact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closeSideMenu()"></div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1 id="pageTitle">Dashboard</h1>
+    <p id="pageSubtitle">Welcome back! Here's your learning progress</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- User Info Section -->
+    <div class="content-section">
+      <div class="user-info-card">
+        <div class="user-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="user-details">
+          <h2 id="userName">Loading...</h2>
+          <p id="userEmail">Loading...</p>
+          <p id="userSince">Member since: Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="content-section">
+      <h2 id="statsTitle">Your Learning Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="coursesPurchasedTitle">Courses Purchased</h3>
+            <div class="stat-number" id="coursesPurchasedCount">0</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="coursesCompletedTitle">Courses Completed</h3>
+            <div class="stat-number" id="coursesCompletedCount">0</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="totalHoursTitle">Total Study Hours</h3>
+            <div class="stat-number" id="totalHoursCount">0</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="achievementsTitle">Achievements</h3>
+            <div class="stat-number" id="achievementsCount">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="content-section">
+      <h2 id="progressTitle">Overall Progress</h2>
+      <div class="progress-card">
+        <div class="progress-header">
+          <h3 id="overallProgressTitle">Course Completion</h3>
+          <span id="progressPercentage">0%</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        <p id="progressDescription">You're making great progress! Keep up the good work.</p>
+      </div>
+    </div>
+
+    <!-- Recent Activity Section -->
+    <div class="content-section">
+      <h2 id="activityTitle">Recent Activity</h2>
+      <div class="activity-list" id="activityList">
+        <div class="activity-item">
+          <div class="activity-icon">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <div class="activity-content">
+            <h4 id="activity1Title">Started Beginner Course</h4>
+            <p id="activity1Time">2 days ago</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="activity-content">
+            <h4 id="activity2Title">Completed Module 1</h4>
+            <p id="activity2Time">1 week ago</p>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="activity-content">
+            <h4 id="activity3Title">Earned Certificate</h4>
+            <p id="activity3Time">2 weeks ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div class="content-section">
+      <h2 id="actionsTitle">Quick Actions</h2>
+      <div class="actions-grid">
+        <a href="courses.html" class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-play"></i>
+          </div>
+          <h3 id="continueLearningTitle">Continue Learning</h3>
+          <p id="continueLearningDesc">Resume your current course</p>
+        </a>
+
+        <a href="syllabus.html" class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-list"></i>
+          </div>
+          <h3 id="viewSyllabusTitle">View Syllabus</h3>
+          <p id="viewSyllabusDesc">See what's coming next</p>
+        </a>
+
+        <a href="gallery.html" class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-images"></i>
+          </div>
+          <h3 id="viewGalleryTitle">View Gallery</h3>
+          <p id="viewGalleryDesc">Browse our resources</p>
+        </a>
+
+        <a href="contact.html" class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 id="getSupportTitle">Get Support</h3>
+          <p id="getSupportDesc">Contact our team</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div id="footerContent">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+      <p>Professional services for modern businesses</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    // Dashboard-specific functionality
+    async function loadDashboardData() {
+      try {
+        // Get current user
+        const user = await Auth.checkLoginStatus();
+        if (!user) {
+          window.location.href = 'login.html';
+          return;
+        }
+
+        // Update user info
+        const firstName = user.user_metadata?.first_name || '';
+        const lastName = user.user_metadata?.last_name || '';
+        const fullName = firstName && lastName ? `${firstName} ${lastName}` : 'User';
+        
+        document.getElementById('userName').textContent = fullName;
+        document.getElementById('userEmail').textContent = user.email;
+        
+        // Format join date
+        const joinDate = new Date(user.created_at);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('userSince').textContent = `Member since: ${joinDate.toLocaleDateString(undefined, options)}`;
+
+        // Load stats (placeholder data for now)
+        const purchasedCount = await Auth.getPurchasedCoursesCount();
+        document.getElementById('coursesPurchasedCount').textContent = purchasedCount;
+        
+        // Load progress
+        const completionPercentage = await Auth.getCourseCompletionPercentage();
+        document.getElementById('progressPercentage').textContent = `${completionPercentage}%`;
+        document.getElementById('progressFill').style.width = `${completionPercentage}%`;
+
+        // Update other stats (placeholder data)
+        document.getElementById('coursesCompletedCount').textContent = Math.floor(completionPercentage / 100 * purchasedCount);
+        document.getElementById('totalHoursCount').textContent = Math.floor(completionPercentage * 0.5);
+        document.getElementById('achievementsCount').textContent = Math.floor(completionPercentage / 20);
+
+      } catch (error) {
+        console.error('Error loading dashboard data:', error);
+        alert('Error loading dashboard data. Please refresh the page.');
+      }
+    }
+
+    // Load dashboard data when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadDashboardData();
+    });
+  </script>
+</body>
+</html>

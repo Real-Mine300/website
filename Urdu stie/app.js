@@ -133,62 +133,14 @@
     });
   }
 
-  // Auth placeholders + redirect to success
-  function handleLoginSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const remember = formData.get('remember');
-    console.log('Login form submitted:', { email, password, remember });
-    localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'success.html';
-  }
-
-  function handleSignupSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const firstName = formData.get('firstName');
-    const lastName = formData.get('lastName');
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirmPassword');
-    const agreeTerms = formData.get('agreeTerms');
-    if (password !== confirmPassword) { alert('Passwords do not match!'); return; }
-    if (!agreeTerms) { alert('Please agree to the Terms of Service and Privacy Policy.'); return; }
-    console.log('Signup form submitted:', { firstName, lastName, email });
-    localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'success.html';
-  }
-
-  function gateCourses() {
-    const body = document.getElementById('mainBody');
-    if (!body) return;
-    const page = body.getAttribute('data-page');
-    if (page === 'courses') {
-      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-      if (!isLoggedIn) {
-        alert('Please log in to access Courses.');
-        window.location.href = 'login.html';
-      }
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
     loadTheme();
     initializeDropdowns();
     // Gallery init
     if (document.getElementById('gallerySlide')) { showSlide(0); resetSlideInterval(); }
-    // Forms
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) loginForm.addEventListener('submit', handleLoginSubmit);
-    const signupForm = document.getElementById('signupForm');
-    if (signupForm) signupForm.addEventListener('submit', handleSignupSubmit);
     // Contact form generic handler (optional)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) contactForm.addEventListener('submit', function(e){ e.preventDefault(); alert('Thank you!'); });
-    // Gate
-    gateCourses();
   });
 })();
 

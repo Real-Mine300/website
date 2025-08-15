@@ -101,6 +101,23 @@
         value3Title: 'Certification', value3Desc: 'Certificates upon successful completion.',
         value4Title: 'Support', value4Desc: 'Ongoing support and resources.'
       },
+      dashboard: {
+        pageTitle: 'Dashboard', pageSubtitle: 'Welcome back! Here\'s your learning progress',
+        statsTitle: 'Your Learning Stats',
+        coursesPurchasedTitle: 'Courses Purchased', coursesCompletedTitle: 'Courses Completed',
+        totalHoursTitle: 'Total Study Hours', achievementsTitle: 'Achievements',
+        progressTitle: 'Overall Progress', overallProgressTitle: 'Course Completion',
+        activityTitle: 'Recent Activity',
+        activity1Title: 'Started Beginner Course', activity1Time: '2 days ago',
+        activity2Title: 'Completed Module 1', activity2Time: '1 week ago',
+        activity3Title: 'Earned Certificate', activity3Time: '2 weeks ago',
+        actionsTitle: 'Quick Actions',
+        continueLearningTitle: 'Continue Learning', continueLearningDesc: 'Resume your current course',
+        viewSyllabusTitle: 'View Syllabus', viewSyllabusDesc: 'See what\'s coming next',
+        viewGalleryTitle: 'View Gallery', viewGalleryDesc: 'Browse our resources',
+        getSupportTitle: 'Get Support', getSupportDesc: 'Contact our team',
+        logoutBtnText: 'Logout'
+      },
       courses: {
         pageTitle: 'Courses', pageSubtitle: 'Curated courses for members',
         storyTitle: 'Featured Courses',
@@ -223,6 +240,23 @@
         value2Title: 'چھوٹے گروپس', value2Desc: 'ذاتی توجہ اور بہتر تعامل۔',
         value3Title: 'سرٹیفیکیشن', value3Desc: 'کامیابی پر سرٹیفکیٹس۔',
         value4Title: 'سپورٹ', value4Desc: 'مسلسل مدد اور وسائل۔'
+      },
+      dashboard: {
+        pageTitle: 'ڈیش بورڈ', pageSubtitle: 'خوش آمدید! آپ کی سیکھنے کی پیش رفت یہاں ہے',
+        statsTitle: 'آپ کے سیکھنے کے اعدادوشمار',
+        coursesPurchasedTitle: 'خریدے گئے کورسز', coursesCompletedTitle: 'مکمل شدہ کورسز',
+        totalHoursTitle: 'کل مطالعہ کے گھنٹے', achievementsTitle: 'کامیابیاں',
+        progressTitle: 'کلی پیش رفت', overallProgressTitle: 'کورس تکمیل',
+        activityTitle: 'حالیہ سرگرمیاں',
+        activity1Title: 'ابتدائی کورس شروع کیا', activity1Time: '2 دن پہلے',
+        activity2Title: 'ماڈیول 1 مکمل کیا', activity2Time: '1 ہفتہ پہلے',
+        activity3Title: 'سرٹیفکیٹ حاصل کیا', activity3Time: '2 ہفتے پہلے',
+        actionsTitle: 'فوری اقدامات',
+        continueLearningTitle: 'سیکھنا جاری رکھیں', continueLearningDesc: 'اپنا موجودہ کورس دوبارہ شروع کریں',
+        viewSyllabusTitle: 'نصاب دیکھیں', viewSyllabusDesc: 'دیکھیں کہ آگے کیا آ رہا ہے',
+        viewGalleryTitle: 'گیلری دیکھیں', viewGalleryDesc: 'ہمارے وسائل براؤز کریں',
+        getSupportTitle: 'مدد حاصل کریں', getSupportDesc: 'ہماری ٹیم سے رابطہ کریں',
+        logoutBtnText: 'لاگ آؤٹ'
       },
       courses: {
         pageTitle: 'کورسز', pageSubtitle: 'اراکین کے لیے خصوصی کورسز',
@@ -373,6 +407,25 @@
         S('value4Title', p.value4Title); S('value4Desc', p.value4Desc);
         break;
       }
+      case 'dashboard': {
+        const p = t.dashboard;
+        S('pageTitle', p.pageTitle); S('pageSubtitle', p.pageSubtitle);
+        S('statsTitle', p.statsTitle);
+        S('coursesPurchasedTitle', p.coursesPurchasedTitle); S('coursesCompletedTitle', p.coursesCompletedTitle);
+        S('totalHoursTitle', p.totalHoursTitle); S('achievementsTitle', p.achievementsTitle);
+        S('progressTitle', p.progressTitle); S('overallProgressTitle', p.overallProgressTitle);
+        S('activityTitle', p.activityTitle);
+        S('activity1Title', p.activity1Title); S('activity1Time', p.activity1Time);
+        S('activity2Title', p.activity2Title); S('activity2Time', p.activity2Time);
+        S('activity3Title', p.activity3Title); S('activity3Time', p.activity3Time);
+        S('actionsTitle', p.actionsTitle);
+        S('continueLearningTitle', p.continueLearningTitle); S('continueLearningDesc', p.continueLearningDesc);
+        S('viewSyllabusTitle', p.viewSyllabusTitle); S('viewSyllabusDesc', p.viewSyllabusDesc);
+        S('viewGalleryTitle', p.viewGalleryTitle); S('viewGalleryDesc', p.viewGalleryDesc);
+        S('getSupportTitle', p.getSupportTitle); S('getSupportDesc', p.getSupportDesc);
+        S('logoutBtnText', p.logoutBtnText);
+        break;
+      }
       case 'courses': {
         const p = t.courses;
         S('pageTitle', p.pageTitle); S('pageSubtitle', p.pageSubtitle);
@@ -434,7 +487,9 @@
       sideMenu.classList.remove('rtl');
       if (t.dirClass === 'rtl') sideMenu.classList.add('rtl');
     }
+    // Update root html attributes for proper bidi rendering and accessibility
     document.documentElement.lang = t.langAttr;
+    document.documentElement.dir = t.dirClass === 'rtl' ? 'rtl' : 'ltr';
   }
 
   function applyLanguage(lang) {

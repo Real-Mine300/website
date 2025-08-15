@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body id="mainBody" class="rtl" data-page="courses">
   <!-- Header/Banner -->
@@ -218,7 +219,31 @@
     </div>
   </footer>
 
+  <script src="config.js"></script>
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    // Course access validation
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Check if user is logged in
+      const user = await Auth.checkLoginStatus();
+      if (!user) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // TODO: Add course purchase validation here
+      // For now, just check if user is logged in
+      // In the future, implement:
+      // const hasAccess = await Auth.checkCourseAccess('courses');
+      // if (!hasAccess) {
+      //   window.location.href = 'payment.html?course=courses';
+      //   return;
+      // }
+      
+      console.log('User has access to courses:', user.email);
+    });
+  </script>
 </body>
 </html> 
